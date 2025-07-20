@@ -253,7 +253,7 @@
         }
 
         .home-content h1 {
-            font-size: 2.3rem; /* Adjusted font size */
+            font-size: 1.8rem; /* Base font size for h1 */
             font-weight: 800;
             margin-bottom: 0.7rem; /* Adjusted margin */
         }
@@ -263,7 +263,7 @@
         }
 
         .typing-text h3 {
-            font-size: 1.3rem; /* Adjusted font size */
+            font-size: 1.8rem; /* Matching h1 font size */
             font-weight: 600;
             margin-bottom: 1rem; /* Adjusted margin */
             min-height: 2rem; /* Ensure space for typing animation */
@@ -359,7 +359,7 @@
         }
 
         .about-intro-text {
-            font-size: 2rem; /* Reduced font size */
+            font-size: 2rem; /* Adjusted font size */
             font-weight: 700;
             color: var(--text-light); /* Changed to dynamic variable for theme */
             margin-bottom: 1.2rem; /* Adjusted margin */
@@ -400,7 +400,7 @@
         }
 
         .stat-number {
-            font-size: 2.2rem; /* Reduced font size */
+            font-size: 2rem; /* Adjusted font size: -0.2rem from 2.2rem */
             font-weight: 800;
             color: var(--primary-color); /* Changed to dynamic variable for theme */
             margin-bottom: 0.4rem; /* Adjusted margin */
@@ -859,10 +859,11 @@
                 padding: 2.2rem; /* More padding */
             }
             .home-content h1 {
-                font-size: 3.2rem; /* Larger main heading */
+                font-size: 2.7rem; /* Adjusted font size */
             }
             .typing-text h3 {
-                font-size: 1.8rem; /* Larger sub-heading */
+                font-size: 2.7rem; /* Matching h1 font size */
+                font-weight: 600; /* Keep consistent font weight */
             }
             .home-content p {
                 font-size: 0.95rem; /* Slightly larger paragraph text */
@@ -945,10 +946,11 @@
                 font-size: 1.8rem;
             }
             .home-content h1 {
-                font-size: 2.2rem;
+                font-size: 1.7rem; /* Adjusted font size */
             }
             .typing-text h3 {
-                font-size: 1.2rem;
+                font-size: 1.7rem; /* Matching h1 font size */
+                font-weight: 600; /* Keep consistent font weight */
             }
             .projects-container, .skills-container {
                 grid-template-columns: repeat(auto-fit, minmax(180px, 1fr));
@@ -960,7 +962,7 @@
                 font-size: 0.8rem;
             }
             .stat-number {
-                font-size: 2.2rem;
+                font-size: 2rem; /* Adjusted font size: -0.2rem from 2.2rem */
             }
             .stat-label {
                 font-size: 0.85rem;
@@ -1001,10 +1003,11 @@
                 margin-top: 0.6rem;
             }
             .home-content h1 {
-                font-size: 2rem;
+                font-size: 1.5rem; /* Adjusted font size */
             }
             .typing-text h3 {
-                font-size: 1.1rem;
+                font-size: 1.5rem; /* Matching h1 font size */
+                font-weight: 600; /* Keep consistent font weight */
             }
             .section-title {
                 font-size: 1.6rem;
@@ -1079,10 +1082,11 @@
                 font-size: 11px; /* Even smaller base font for very small screens */
             }
             .home-content h1 {
-                font-size: 1.6rem;
+                font-size: 1.1rem; /* Adjusted font size */
             }
             .typing-text h3 {
-                font-size: 0.9rem;
+                font-size: 1.1rem; /* Matching h1 font size */
+                font-weight: 600; /* Keep consistent font weight */
             }
             .section-title {
                 font-size: 1.3rem;
@@ -1723,7 +1727,7 @@
                         const suffix = entry.target.getAttribute('data-suffix') || '';
                         const decimalPlaces = parseInt(entry.target.getAttribute('data-decimal-places')) || 0;
                         let current = 0;
-                        const duration = 2000; // 2 seconds
+                        const duration = 1500; // Reduced from 2000ms to 1500ms for faster counting
                         const stepTime = 10;
                         const steps = duration / stepTime;
                         const increment = target / steps;
