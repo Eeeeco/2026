@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Saurav Portfolio 2025 (Enhanced Responsiveness)</title>
+    <title>Saurav Portfolio 2025 (Enhanced Text Readability and Sizing)</title>
     <!-- Tailwind CSS CDN -->
     <script src="https://cdn.tailwindcss.com"></script>
     <!-- Font Awesome for icons -->
@@ -49,6 +49,7 @@
             line-height: 1.6;
             overflow-x: hidden; /* Prevent horizontal scroll */
             transition: background-color 0.5s ease, color 0.5s ease; /* Smooth theme transition */
+            font-size: 16px; /* Base font size for normal readability */
         }
 
         .section-title {
@@ -56,7 +57,7 @@
             font-weight: 700;
             text-align: center;
             margin-bottom: 3rem;
-            color: var(--primary-color);
+            color: var(--text-light); /* Ensures visibility against dark background */
             position: relative;
             padding-bottom: 10px;
         }
@@ -343,6 +344,74 @@
             transform: scale(1.05);
         }
 
+        /* About Section Styles */
+        .about {
+            padding: 5rem 5%;
+            background-color: var(--background-dark);
+            text-align: center;
+            position: relative; /* Added for z-index to work */
+            z-index: 1; /* Added to ensure it's above the canvas */
+        }
+
+        .about-content {
+            max-width: 900px;
+            margin: 0 auto;
+        }
+
+        .about-intro-text {
+            font-size: 2.2rem;
+            font-weight: 700;
+            color: #FFFFFF; /* Explicitly white for readability */
+            margin-bottom: 1.5rem;
+        }
+
+        .about-description {
+            font-size: 1rem; /* Adjusted for normal readability */
+            color: #FFFFFF; /* Explicitly white for readability */
+            margin-bottom: 3rem;
+            line-height: 1.8;
+            text-align: justify; /* Justify text for better readability */
+        }
+
+        .stats-container {
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: center;
+            gap: 2rem;
+            margin-top: 2rem;
+        }
+
+        .stat-card {
+            background-color: var(--card-background);
+            border-radius: 15px;
+            padding: 1.5rem 1rem;
+            box-shadow: 0 5px 20px rgba(0, 0, 0, 0.2);
+            border: 1px solid var(--border-color);
+            flex: 1;
+            min-width: 200px;
+            max-width: 280px;
+            text-align: center;
+            transition: transform 0.3s ease, box-shadow 0.3s ease, background-color 0.5s ease, border-color 0.5s ease;
+        }
+
+        .stat-card:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 8px 25px rgba(0, 0, 0, 0.3);
+        }
+
+        .stat-number {
+            font-size: 3.5rem;
+            font-weight: 800;
+            color: #FFFFFF; /* Explicitly white for readability */
+            margin-bottom: 0.5rem;
+        }
+
+        .stat-label {
+            font-size: 1.1rem;
+            font-weight: 500;
+            color: var(--secondary-color);
+        }
+
         /* Projects Section */
         .projects {
             padding: 5rem 5%;
@@ -393,7 +462,7 @@
         }
 
         .project-card p {
-            font-size: 0.95rem; /* Adjusted font size */
+            font-size: 0.95rem; /* Adjusted for normal readability */
             color: var(--secondary-color);
             margin-bottom: 1.2rem; /* Adjusted margin */
             flex-grow: 1; /* Allow description to take available space */
@@ -589,7 +658,7 @@
         }
 
         .timeline_date-text {
-            font-size: 1rem; /* Adjusted font size */
+            font-size: 1rem; /* Adjusted for normal readability */
             font-weight: 600;
             color: var(--primary-color);
             margin-bottom: 0.4rem; /* Adjusted margin */
@@ -597,7 +666,7 @@
 
         .timeline_right h3,
         .timeline_left h3 {
-            font-size: 1.6rem; /* Adjusted font size */
+            font-size: 1.6rem; /* Adjusted for normal readability */
             font-weight: 700;
             color: var(--text-light);
             margin-bottom: 0.4rem; /* Adjusted margin */
@@ -605,14 +674,14 @@
 
         .timeline_right h4,
         .timeline_left h4 {
-            font-size: 1.1rem; /* Adjusted font size */
+            font-size: 1.1rem; /* Adjusted for normal readability */
             font-weight: 500;
             color: var(--secondary-color);
             margin-bottom: 0.8rem; /* Adjusted margin */
         }
 
         .timeline_text {
-            font-size: 0.95rem; /* Adjusted font size */
+            font-size: 0.95rem; /* Adjusted for normal readability */
             color: var(--secondary-color);
             margin-bottom: 0.8rem; /* Adjusted margin */
         }
@@ -691,7 +760,7 @@
         .contact-form h3,
         .contact-info h3,
         .social-links-container h2 {
-            font-size: 1.6rem; /* Adjusted font size */
+            font-size: 1.6rem; /* Adjusted for normal readability */
             font-weight: 600;
             color: var(--primary-color);
             margin-bottom: 1.5rem; /* Adjusted margin */
@@ -712,7 +781,7 @@
             border-radius: 6px; /* Slightly smaller border-radius */
             background-color: var(--background-dark); /* Use background-dark for input fields */
             color: var(--text-light);
-            font-size: 0.95rem; /* Adjusted font size */
+            font-size: 0.95rem; /* Adjusted for normal readability */
             outline: none;
             transition: border-color 0.3s ease, box-shadow 0.3s ease, background-color 0.5s ease, color 0.5s ease;
         }
@@ -736,7 +805,7 @@
         }
 
         .contact-info p {
-            font-size: 1rem; /* Adjusted font size */
+            font-size: 1rem; /* Adjusted for normal readability */
             margin-bottom: 0.8rem; /* Adjusted margin */
             color: var(--secondary-color);
             display: flex;
@@ -746,7 +815,7 @@
         .contact-info p i {
             color: var(--primary-color);
             margin-right: 0.8rem; /* Adjusted margin */
-            font-size: 1.2rem; /* Adjusted font size */
+            font-size: 1.2rem; /* Adjusted for normal readability */
             width: 22px; /* Align icons */
         }
 
@@ -763,13 +832,16 @@
             text-align: center;
             border-top: 1px solid var(--border-color);
             color: var(--secondary-color);
-            font-size: 0.85rem; /* Adjusted font size */
+            font-size: 0.85rem; /* Adjusted for normal readability */
             transition: background-color 0.5s ease, border-color 0.5s ease, color 0.5s ease;
         }
 
         /* Responsive Adjustments - ENHANCED */
         /* Larger screens (desktop) */
         @media (min-width: 1200px) {
+            body {
+                font-size: 17px; /* Slightly larger base font for very large screens */
+            }
             .section-title {
                 font-size: 3rem; /* Larger title for big screens */
             }
@@ -806,12 +878,12 @@
                 font-size: 1.8rem; /* Larger project titles */
             }
             .skill-icon {
-                font-size: 2.5rem; /* Larger skill icons */
+                font-size: 2.5rem;
                 width: 60px;
                 height: 60px;
             }
             .skill-card h3 {
-                font-size: 1.5rem; /* Larger skill titles */
+                font-size: 1.5rem;
             }
             .timeline_component {
                 max-width: 900px; /* Wider timeline */
@@ -832,6 +904,9 @@
 
         /* Medium screens (tablets and smaller desktops) */
         @media (max-width: 1024px) {
+            body {
+                font-size: 15px; /* Slightly smaller base font for tablets */
+            }
             .home {
                 flex-direction: column;
                 text-align: center;
@@ -869,10 +944,25 @@
             .projects-container, .skills-container {
                 grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
             }
+            .about-intro-text {
+                font-size: 1.8rem;
+            }
+            .about-description {
+                font-size: 1rem;
+            }
+            .stat-number {
+                font-size: 3rem;
+            }
+            .stat-label {
+                font-size: 1rem;
+            }
         }
 
         /* Small screens (mobile) */
         @media (max-width: 768px) {
+            body {
+                font-size: 14px; /* Base font size for mobile */
+            }
             header {
                 flex-direction: column;
                 padding: 1rem;
@@ -944,9 +1034,23 @@
                 width: 70px;
                 height: 70px;
             }
+            .stat-card {
+                min-width: 150px;
+                max-width: 200px;
+                padding: 1rem 0.8rem;
+                /* Subtle shadow for mobile */
+                box-shadow: 0 3px 10px rgba(0, 0, 0, 0.15);
+            }
+            /* Adjust glow-card shadow for smaller screens */
+            .glow-card {
+                box-shadow: 0 3px 10px rgba(0, 0, 0, 0.15);
+            }
         }
 
         @media (max-width: 480px) {
+            body {
+                font-size: 13px; /* Even smaller base font for very small screens */
+            }
             .home-content h1 {
                 font-size: 2rem;
             }
@@ -965,6 +1069,10 @@
             .social-icons a {
                 margin: 0 0.4rem; /* Tighter spacing for social icons */
             }
+            .stat-card {
+                min-width: 100%; /* Full width for very small screens */
+                max-width: 100%;
+            }
         }
     </style>
 </head>
@@ -973,6 +1081,7 @@
         <a href="#home" class="fixed-name">Saurav Ojha</a>
         <nav>
             <a href="#home" class="active">Home</a>
+            <a href="#about">About</a> <!-- Added About link -->
             <a href="#projects">Projects</a>
             <a href="#skills">Skills</a>
             <a href="#education">Education</a>
@@ -1004,6 +1113,29 @@
         </div>
         <div class="home-img">
             <img src="https://raw.githubusercontent.com/Eeeeco/Portfolio/main/Mee.png" alt="Profile Picture">
+        </div>
+    </section>
+
+    <!-- About Me Section -->
+    <section id="about" class="about">
+        <div class="about-content">
+            <h2 class="section-title">About Me</h2>
+            <p class="about-intro-text">Saurav Ojha</p> <!-- Color now explicitly white via CSS -->
+            <p class="about-description">As a dedicated Data Analyst with a strong foundation in Commerce and a pursuing MBA in Business Analytics, I excel at transforming complex datasets into clear, actionable insights. My expertise spans Python, Power BI, SQL, and Machine Learning, allowing me to uncover trends and drive informed decision-making. With a keen eye for detail and a passion for problem-solving, I am committed to leveraging data to optimize processes and contribute to impactful business outcomes.</p>
+            <div class="stats-container">
+                <div class="stat-card">
+                    <div class="stat-number" data-target="5" data-suffix="">0</div>
+                    <p class="stat-label">Projects</p>
+                </div>
+                <div class="stat-card">
+                    <div class="stat-number" data-target="4" data-suffix="+">0</div>
+                    <p class="stat-label">Years of Experience</p>
+                </div>
+                <div class="stat-card">
+                    <div class="stat-number" data-target="6.82" data-decimal-places="2" data-suffix="+">0.00</div>
+                    <p class="stat-label">Aggregate CGPA</p>
+                </div>
+            </div>
         </div>
     </section>
 
@@ -1542,6 +1674,42 @@
             });
         }
 
+        // --- Counter Animation for About Section ---
+        const statNumbers = document.querySelectorAll('.stat-number');
+        const observerOptions = {
+            root: null,
+            rootMargin: '0px',
+            threshold: 0.5 // Trigger when 50% of the element is visible
+        };
+
+        const counterObserver = new IntersectionObserver((entries, observer) => {
+            entries.forEach(entry => {
+                if (entry.isIntersecting) {
+                    const target = parseFloat(entry.target.getAttribute('data-target'));
+                    const suffix = entry.target.getAttribute('data-suffix') || '';
+                    const decimalPlaces = parseInt(entry.target.getAttribute('data-decimal-places')) || 0;
+                    let current = 0;
+                    const duration = 2000; // 2 seconds
+                    const stepTime = 10;
+                    const steps = duration / stepTime;
+                    const increment = target / steps;
+
+                    const animateCount = () => {
+                        current += increment;
+                        if (current < target) {
+                            entry.target.textContent = current.toFixed(decimalPlaces) + suffix;
+                            setTimeout(animateCount, stepTime);
+                        } else {
+                            entry.target.textContent = target.toFixed(decimalPlaces) + suffix;
+                        }
+                    };
+                    animateCount();
+                    observer.unobserve(entry.target); // Stop observing once animation is done
+                }
+            });
+        }, observerOptions);
+
+
         // Initial calls and event listeners
         window.addEventListener('scroll', () => {
             animateSkillBars();
@@ -1553,6 +1721,11 @@
             animate(); // Start Three.js animation loop
             animateSkillBars(); // Initial check for skills in view
             animateTimelineProgress(); // Initial check for timeline in view
+
+            // Observe stat numbers for counter animation
+            statNumbers.forEach(number => {
+                counterObserver.observe(number);
+            });
         });
     </script>
 </body>
