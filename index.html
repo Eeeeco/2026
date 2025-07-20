@@ -699,10 +699,11 @@
 
         /* Contact Section */
         .contact {
-            padding: 4.5rem 4%; /* Reduced padding */
-            background-color: var(--background-dark);
+            padding: 3.5rem 3%; /* Reduced padding */
+            background-color: transparent; /* Made transparent to show Three.js background */
             position: relative;
             overflow: hidden;
+            z-index: 1; /* Ensure content is above canvas */
         }
 
         .contact-container {
@@ -726,8 +727,7 @@
         }
 
         .contact-form,
-        .contact-info,
-        .social-links-container {
+        .contact-info {
             /* Inherits glow-card styles */
             padding: 1.5rem; /* Reduced padding */
             flex: 1;
@@ -740,19 +740,37 @@
             max-width: 500px; /* Adjusted max-width */
         }
 
-        .contact-info,
-        .social-links-container {
+        .contact-info {
             flex-basis: 35%; /* Adjusted basis */
             max-width: 280px; /* Adjusted max-width */
         }
 
+        /* Removed glow-card styling from social-links-container */
+        .social-links-container {
+            padding: 0; /* Remove padding */
+            background-color: transparent; /* Make background transparent */
+            border: none; /* Remove border */
+            box-shadow: none; /* Remove shadow */
+            flex-basis: 100%; /* Take full width to center content */
+            max-width: 100%;
+            text-align: center; /* Center content */
+            margin-top: 1rem; /* Adjust margin as needed */
+        }
+
         .contact-form h3,
-        .contact-info h3,
-        .social-links-container h2 {
+        .contact-info h3 {
             font-size: 1.3rem; /* Reduced font size */
             font-weight: 600;
             color: var(--primary-color);
             margin-bottom: 1.2rem; /* Adjusted margin */
+            text-align: center;
+        }
+        /* Specific rule for social-links-container h2 for better visibility */
+        .social-links-container h2 {
+            font-size: 1.3rem; /* Keep consistent font size */
+            font-weight: 600;
+            color: var(--text-light); /* Changed to text-light for better contrast */
+            margin-bottom: 0.8rem; /* Adjusted margin for the heading */
             text-align: center;
         }
 
@@ -1042,7 +1060,7 @@
             .glow-card {
                 box-shadow: 0 1px 5px rgba(0, 0, 0, 0.08); /* Adjusted for more subtle look */
             }
-            .contact-form, .contact-info, .social-links-container {
+            .contact-form, .contact-info {
                 padding: 1.2rem;
             }
             .contact-form h3, .contact-info h3, .social-links-container h2 {
@@ -1439,7 +1457,7 @@
                     <p><i class="fas fa-envelope"></i> sauravojha@example.com</p>
                     <p><i class="fas fa-phone"></i> +91 98765 43210</p>
                 </div>
-                <div class="social-links-container glow-card">
+                <div class="social-links-container">
                     <h2>Connect with me</h2>
                     <div class="social-icons">
                         <a href="https://www.linkedin.com/in/sauravojha/" target="_blank"><i class="fab fa-linkedin"></i></a>
