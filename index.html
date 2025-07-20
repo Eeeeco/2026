@@ -3,8 +3,8 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Saurav Ojha - My Perfect Portfolio 2025</title>
-    <!-- Tailwind CSS CDN for utility classes -->
+    <title>Saurav Portfolio 2025 (Refined)</title>
+    <!-- Tailwind CSS CDN -->
     <script src="https://cdn.tailwindcss.com"></script>
     <!-- Font Awesome for icons -->
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
@@ -26,10 +26,6 @@
             --gradient-end: #00c6ff;
             --header-bg: rgba(26, 26, 46, 0.9);
             --header-border: #3a3a5a;
-            --input-bg: #1a1a2e; /* Input background in dark mode */
-            --toggle-bg-off: #6c757d;
-            --toggle-bg-on: #007bff;
-            --toggle-circle: #ffffff;
         }
 
         /* Light Mode Variables */
@@ -44,10 +40,6 @@
             --gradient-end: #0099e6;
             --header-bg: rgba(255, 255, 255, 0.9);
             --header-border: #e0e0e0;
-            --input-bg: #e0e0e0; /* Input background in light mode */
-            --toggle-bg-off: #adb5bd;
-            --toggle-bg-on: #0056b3;
-            --toggle-circle: #ffffff;
         }
 
         body {
@@ -58,62 +50,6 @@
             overflow-x: hidden; /* Prevent horizontal scroll */
             transition: background-color 0.5s ease, color 0.5s ease; /* Smooth theme transition */
         }
-
-        /* Parallax Star Background */
-        .stars {
-            position: fixed;
-            top: 0;
-            left: 0;
-            width: 100%;
-            height: 100%;
-            overflow: hidden;
-            z-index: -1; /* Send to background */
-            background-color: transparent; /* Ensure body background shows through */
-        }
-
-        .star-layer {
-            position: absolute;
-            top: 0;
-            left: 0;
-            width: 100%;
-            height: 100%;
-            background-repeat: repeat;
-            background-attachment: fixed; /* Crucial for parallax */
-        }
-
-        /* Layer 1: Small, dense stars, move fastest */
-        .star-layer-1 {
-            background-image: radial-gradient(circle, #fff 1px, transparent 1px);
-            background-size: 100px 100px; /* Density */
-            animation: move-stars-1 100s linear infinite;
-        }
-        @keyframes move-stars-1 {
-            from { background-position: 0 0; }
-            to { background-position: 10000px 5000px; }
-        }
-
-        /* Layer 2: Medium stars, move medium speed */
-        .star-layer-2 {
-            background-image: radial-gradient(circle, #fff 1.5px, transparent 1.5px);
-            background-size: 200px 200px;
-            animation: move-stars-2 150s linear infinite;
-        }
-        @keyframes move-stars-2 {
-            from { background-position: 0 0; }
-            to { background-position: 8000px 4000px; }
-        }
-
-        /* Layer 3: Large, sparse stars, move slowest */
-        .star-layer-3 {
-            background-image: radial-gradient(circle, #fff 2px, transparent 2px);
-            background-size: 300px 300px;
-            animation: move-stars-3 200s linear infinite;
-        }
-        @keyframes move-stars-3 {
-            from { background-position: 0 0; }
-            to { background-position: 6000px 3000px; }
-        }
-
 
         .section-title {
             font-size: 2.5rem;
@@ -200,52 +136,75 @@
             transform: translateY(-2px);
         }
 
-        /* Custom Toggle Switch Styles */
-        .theme-toggle {
+        /* Custom toggle switch styling (Modern Icon) */
+        .theme-toggle-container {
             position: relative;
             display: inline-block;
-            width: 60px; /* Wider for the toggle switch look */
-            height: 34px;
-            cursor: pointer;
+            width: 50px; /* Width of the toggle */
+            height: 28px; /* Height of the toggle */
+            margin-left: 2rem; /* Spacing from nav links */
         }
 
-        .theme-toggle input {
+        .theme-toggle-container input {
             opacity: 0;
             width: 0;
             height: 0;
         }
 
-        .slider {
+        .toggle-slider {
             position: absolute;
             cursor: pointer;
             top: 0;
             left: 0;
             right: 0;
             bottom: 0;
-            background-color: var(--toggle-bg-off);
+            background-color: #ccc; /* Default background */
+            -webkit-transition: .4s;
             transition: .4s;
-            border-radius: 34px;
+            border-radius: 28px; /* Rounded corners for pill shape */
         }
 
-        .slider:before {
+        .toggle-slider:before {
             position: absolute;
             content: "";
-            height: 26px;
-            width: 26px;
-            left: 4px;
+            height: 20px; /* Size of the circle */
+            width: 20px;
+            left: 4px; /* Initial position */
             bottom: 4px;
-            background-color: var(--toggle-circle);
+            background-color: white; /* Circle color */
+            -webkit-transition: .4s;
             transition: .4s;
-            border-radius: 50%;
+            border-radius: 50%; /* Make it a circle */
         }
 
-        input:checked + .slider {
-            background-color: var(--toggle-bg-on);
+        input:checked + .toggle-slider {
+            background-color: #2196F3; /* Blue when checked */
         }
 
-        input:checked + .slider:before {
-            transform: translateX(26px);
+        input:focus + .toggle-slider {
+            box-shadow: 0 0 1px #2196F3;
         }
+
+        input:checked + .toggle-slider:before {
+            -webkit-transform: translateX(22px); /* Move circle to the right */
+            -ms-transform: translateX(22px);
+            transform: translateX(22px);
+        }
+
+        /* Adjust toggle colors for dark/light theme */
+        body.light-mode .toggle-slider {
+            background-color: #CBD5E0; /* Light gray for light mode */
+        }
+        body.light-mode input:checked + .toggle-slider {
+            background-color: #4299E1; /* Standard blue for light mode checked */
+        }
+        body:not(.light-mode) .toggle-slider { /* Dark mode default */
+            background-color: #4A5568; /* Darker gray for dark mode */
+        }
+        body:not(.light-mode) input:checked + .toggle-slider {
+            background-color: #63B3ED; /* Lighter blue for dark mode checked */
+        }
+
 
         /* Home Section */
         .home {
@@ -258,17 +217,44 @@
             overflow: hidden;
         }
 
+        /* Three.js Canvas for animated background */
+        #bgCanvas {
+            position: fixed; /* Changed to fixed to cover entire viewport */
+            top: 0;
+            left: 0;
+            width: 100vw;
+            height: 100vh;
+            z-index: 0;
+        }
+
         .home-content {
             z-index: 1;
             text-align: center;
-            max-width: 800px;
+            max-width: 600px; /* Made smaller */
             margin-right: 2rem;
+            background-color: var(--card-background);
+            border-radius: 15px;
+            padding: 2rem; /* Adjusted padding */
+            box-shadow: 0 5px 20px rgba(0, 0, 0, 0.3);
+            border: 1px solid var(--border-color);
+            transition: background-color 0.5s ease, border-color 0.5s ease;
+        }
+
+        /* Removed glow-card::before and ::after for the starburst effect */
+        .glow-card {
+            position: relative;
+            overflow: hidden;
+            border-radius: 15px;
+            background-color: var(--card-background);
+            box-shadow: 0 5px 20px rgba(0, 0, 0, 0.3);
+            border: 1px solid var(--border-color);
+            transition: transform 0.3s ease, box-shadow 0.3s ease, background-color 0.5s ease, border-color 0.5s ease;
         }
 
         .home-content h1 {
-            font-size: 3.5rem;
+            font-size: 3rem; /* Adjusted font size */
             font-weight: 800;
-            margin-bottom: 1rem;
+            margin-bottom: 0.8rem;
         }
 
         .home-content h1 span {
@@ -276,10 +262,10 @@
         }
 
         .typing-text h3 {
-            font-size: 2rem;
+            font-size: 1.8rem; /* Adjusted font size */
             font-weight: 600;
-            margin-bottom: 1.5rem;
-            min-height: 2.5rem; /* Ensure space for typing animation */
+            margin-bottom: 1.2rem;
+            min-height: 2.2rem; /* Ensure space for typing animation */
         }
 
         .typing-text h3 span {
@@ -295,8 +281,8 @@
         }
 
         .home-content p {
-            font-size: 1.1rem;
-            margin-bottom: 2rem;
+            font-size: 1rem; /* Adjusted font size */
+            margin-bottom: 1.5rem;
             color: var(--secondary-color);
         }
 
@@ -304,14 +290,14 @@
             display: inline-flex;
             justify-content: center;
             align-items: center;
-            width: 45px;
-            height: 45px;
+            width: 40px; /* Slightly smaller icons */
+            height: 40px;
             background: var(--card-background);
             border: 1px solid var(--border-color);
             border-radius: 50%;
             color: var(--primary-color);
-            font-size: 1.3rem;
-            margin: 0 0.8rem;
+            font-size: 1.2rem; /* Slightly smaller icon font */
+            margin: 0 0.6rem; /* Adjusted margin */
             transition: all 0.3s ease;
         }
 
@@ -324,8 +310,8 @@
 
         .btn {
             display: inline-block;
-            margin-top: 2.5rem;
-            padding: 0.8rem 2.5rem;
+            margin-top: 2rem; /* Adjusted margin */
+            padding: 0.7rem 2rem; /* Adjusted padding */
             background: linear-gradient(90deg, var(--gradient-start), var(--gradient-end));
             color: var(--text-light);
             text-decoration: none;
@@ -346,7 +332,7 @@
         }
 
         .home-img img {
-            max-width: 400px;
+            max-width: 350px; /* Slightly smaller image */
             border-radius: 50%;
             border: 5px solid var(--primary-color);
             box-shadow: 0 0 30px rgba(0, 123, 255, 0.5);
@@ -357,77 +343,6 @@
             transform: scale(1.05);
         }
 
-        /* About Me Section */
-        .about {
-            padding: 5rem 5%;
-            background-color: var(--background-dark);
-            display: flex;
-            flex-direction: column;
-            align-items: center;
-            gap: 3rem;
-            text-align: center;
-        }
-
-        .about-content {
-            max-width: 800px;
-            display: flex;
-            flex-direction: column;
-            align-items: center;
-            gap: 2rem;
-        }
-
-        .about-img img {
-            max-width: 250px;
-            border-radius: 50%;
-            border: 4px solid var(--primary-color);
-            box-shadow: 0 0 20px rgba(0, 123, 255, 0.4);
-        }
-
-        .about-text h3 {
-            font-size: 2rem;
-            font-weight: 700;
-            color: var(--primary-color);
-            margin-bottom: 1rem;
-        }
-
-        .about-text p {
-            font-size: 1.1rem;
-            color: var(--secondary-color);
-            margin-bottom: 2rem;
-        }
-
-        .stats-container {
-            display: flex;
-            flex-wrap: wrap;
-            justify-content: center;
-            gap: 2rem;
-            margin-top: 2rem;
-        }
-
-        .stat-card {
-            background-color: var(--card-background);
-            border-radius: 15px;
-            padding: 1.5rem 2rem;
-            box-shadow: 0 4px 15px rgba(0, 0, 0, 0.2);
-            border: 1px solid var(--border-color);
-            min-width: 180px;
-            text-align: center;
-        }
-
-        .stat-card .number {
-            font-size: 2.5rem;
-            font-weight: 800;
-            color: var(--gradient-end);
-            margin-bottom: 0.5rem;
-        }
-
-        .stat-card .label {
-            font-size: 1rem;
-            color: var(--secondary-color);
-            font-weight: 500;
-        }
-
-
         /* Projects Section */
         .projects {
             padding: 5rem 5%;
@@ -436,21 +351,16 @@
 
         .projects-container {
             display: grid;
-            /* Adjusted minmax for smaller cards */
-            grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
-            gap: 1.5rem; /* Reduced gap */
-            max-width: 1200px;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr)); /* Adjusted minmax for smaller cards */
+            gap: 1.5rem; /* Adjusted gap */
+            max-width: 1100px; /* Adjusted max-width */
             margin: 0 auto;
         }
 
         .project-card {
-            background-color: var(--card-background);
-            border-radius: 15px;
-            padding: 1.8rem; /* Reduced padding */
+            /* Inherits glow-card styles */
+            padding: 1.5rem; /* Adjusted padding */
             text-align: center;
-            box-shadow: 0 5px 20px rgba(0, 0, 0, 0.3);
-            transition: transform 0.3s ease, box-shadow 0.3s ease;
-            border: 1px solid var(--border-color);
             display: flex;
             flex-direction: column;
             justify-content: space-between;
@@ -462,36 +372,36 @@
         }
 
         .project-icon {
-            font-size: 2.5rem; /* Reduced icon size */
+            font-size: 2.5rem; /* Adjusted font size */
             color: var(--primary-color);
-            margin-bottom: 0.8rem;
+            margin-bottom: 0.8rem; /* Adjusted margin */
             background: rgba(0, 123, 255, 0.1);
-            width: 70px; /* Reduced size */
-            height: 70px; /* Reduced size */
+            width: 70px; /* Adjusted size */
+            height: 70px;
             border-radius: 50%;
             display: inline-flex;
             justify-content: center;
             align-items: center;
-            margin: 0 auto 1.2rem;
+            margin: 0 auto 1rem; /* Adjusted margin */
         }
 
         .project-card h3 {
-            font-size: 1.5rem; /* Reduced font size */
+            font-size: 1.5rem; /* Adjusted font size */
             font-weight: 600;
-            margin-bottom: 0.8rem;
+            margin-bottom: 0.8rem; /* Adjusted margin */
             color: var(--text-light);
         }
 
         .project-card p {
-            font-size: 0.95rem; /* Reduced font size */
+            font-size: 0.95rem; /* Adjusted font size */
             color: var(--secondary-color);
-            margin-bottom: 1.2rem;
+            margin-bottom: 1.2rem; /* Adjusted margin */
             flex-grow: 1; /* Allow description to take available space */
         }
 
         .project-link {
             display: inline-block;
-            padding: 0.5rem 1.2rem; /* Reduced padding */
+            padding: 0.5rem 1.2rem; /* Adjusted padding */
             background: var(--primary-color);
             color: var(--text-light);
             text-decoration: none;
@@ -513,20 +423,15 @@
 
         .skills-container {
             display: grid;
-            /* Adjusted minmax for smaller cards */
-            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
-            gap: 1.5rem; /* Reduced gap */
-            max-width: 1200px;
+            grid-template-columns: repeat(auto-fit, minmax(220px, 1fr)); /* Adjusted minmax for smaller cards */
+            gap: 1.5rem; /* Adjusted gap */
+            max-width: 1100px; /* Adjusted max-width */
             margin: 0 auto;
         }
 
         .skill-card {
-            background-color: var(--card-background);
-            border-radius: 15px;
-            padding: 1.8rem; /* Reduced padding */
-            box-shadow: 0 5px 20px rgba(0, 0, 0, 0.3);
-            transition: transform 0.3s ease, box-shadow 0.3s ease;
-            border: 1px solid var(--border-color);
+            /* Inherits glow-card styles */
+            padding: 1.5rem; /* Adjusted padding */
         }
 
         .skill-card:hover {
@@ -537,15 +442,15 @@
         .skill-header {
             display: flex;
             align-items: center;
-            margin-bottom: 1.2rem; /* Reduced margin */
+            margin-bottom: 1.2rem; /* Adjusted margin */
         }
 
         .skill-icon {
-            font-size: 2.2rem; /* Reduced icon size */
+            font-size: 2rem; /* Adjusted font size */
             color: var(--primary-color);
-            margin-right: 0.8rem; /* Reduced margin */
-            width: 55px; /* Reduced size */
-            height: 55px; /* Reduced size */
+            margin-right: 0.8rem; /* Adjusted margin */
+            width: 50px; /* Adjusted size */
+            height: 50px;
             border-radius: 50%;
             background: rgba(0, 123, 255, 0.1);
             display: flex;
@@ -554,7 +459,7 @@
         }
 
         .skill-card h3 {
-            font-size: 1.4rem; /* Reduced font size */
+            font-size: 1.3rem; /* Adjusted font size */
             font-weight: 600;
             color: var(--text-light);
         }
@@ -562,7 +467,7 @@
         .skill-progress {
             background-color: var(--border-color);
             border-radius: 10px;
-            height: 12px; /* Reduced height */
+            height: 12px; /* Slightly smaller height */
             overflow: hidden;
             position: relative;
         }
@@ -595,11 +500,12 @@
 
         .timeline_component {
             position: relative;
-            max-width: 900px;
+            max-width: 800px; /* Adjusted max-width for timeline */
             margin: 0 auto;
             padding-top: 2rem;
         }
 
+        /* Keep the progress bar visible */
         .timeline_progress {
             position: absolute;
             left: 50%;
@@ -626,6 +532,8 @@
             align-items: flex-start;
             margin-bottom: 3rem;
             position: relative;
+            /* No glow-card or box-like styles on timeline_item itself */
+            transition: background-color 0.5s ease, border-color 0.5s ease;
         }
 
         /* Adjusting for better layout and preventing overlap */
@@ -640,8 +548,12 @@
         .timeline_left,
         .timeline_right {
             flex: 1;
-            padding: 0 2rem;
+            padding: 1rem 2rem; /* Adjusted padding for content inside timeline item */
             box-sizing: border-box; /* Include padding in width */
+            background-color: var(--card-background); /* Re-added background for content blocks */
+            border-radius: 10px; /* Rounded corners for content blocks */
+            box-shadow: 0 4px 15px rgba(0, 0, 0, 0.2); /* Subtle shadow for content blocks */
+            border: 1px solid var(--border-color); /* Subtle border for content blocks */
         }
 
         .timeline_left {
@@ -662,69 +574,69 @@
         }
 
         .timeline_circle {
-            width: 50px;
-            height: 50px;
+            width: 45px; /* Slightly smaller circle */
+            height: 45px;
             background-color: var(--primary-color);
             border-radius: 50%;
             display: flex;
             justify-content: center;
             align-items: center;
             color: var(--text-light);
-            font-size: 1.5rem;
-            box-shadow: 0 0 15px rgba(0, 123, 255, 0.5);
-            border: 3px solid var(--card-background);
+            font-size: 1.3rem; /* Slightly smaller icon font */
+            box-shadow: 0 0 10px rgba(0, 123, 255, 0.5);
+            border: 3px solid var(--background-dark); /* Border to match background */
             transition: background-color 0.5s ease, border-color 0.5s ease;
         }
 
         .timeline_date-text {
-            font-size: 1.1rem;
+            font-size: 1rem; /* Adjusted font size */
             font-weight: 600;
             color: var(--primary-color);
-            margin-bottom: 0.5rem;
+            margin-bottom: 0.4rem; /* Adjusted margin */
         }
 
         .timeline_right h3,
         .timeline_left h3 {
-            font-size: 1.8rem;
+            font-size: 1.6rem; /* Adjusted font size */
             font-weight: 700;
             color: var(--text-light);
-            margin-bottom: 0.5rem;
+            margin-bottom: 0.4rem; /* Adjusted margin */
         }
 
         .timeline_right h4,
         .timeline_left h4 {
-            font-size: 1.2rem;
+            font-size: 1.1rem; /* Adjusted font size */
             font-weight: 500;
             color: var(--secondary-color);
-            margin-bottom: 1rem;
+            margin-bottom: 0.8rem; /* Adjusted margin */
         }
 
         .timeline_text {
-            font-size: 1rem;
+            font-size: 0.95rem; /* Adjusted font size */
             color: var(--secondary-color);
-            margin-bottom: 1rem;
+            margin-bottom: 0.8rem; /* Adjusted margin */
         }
 
         .timeline_image-wrapper {
-            width: 100px; /* Fixed width for logos */
-            height: 100px;
+            width: 80px; /* Smaller width for logos */
+            height: 80px; /* Smaller height for logos */
             overflow: hidden;
-            border-radius: 10px;
-            border: 2px solid var(--border-color);
+            border-radius: 8px; /* Slightly smaller border-radius */
+            border: 1px solid var(--border-color); /* Thinner border */
             display: flex;
             justify-content: center;
             align-items: center;
             background-color: var(--card-background);
-            box-shadow: 0 2px 10px rgba(0, 0, 0, 0.3);
-            margin-top: 1rem; /* Space from text */
+            box-shadow: 0 1px 5px rgba(0, 0, 0, 0.2); /* More subtle shadow */
+            margin-top: 0.8rem; /* Adjusted space from text */
             transition: background-color 0.5s ease, border-color 0.5s ease;
         }
 
         .timeline_image-wrapper img {
-            width: 100%;
-            height: 100%;
-            object-fit: contain; /* Ensure logo fits without cropping */
-            padding: 5px; /* Small padding for logos */
+            width: 90%; /* Ensure logo fits without cropping */
+            height: 90%;
+            object-fit: contain;
+            padding: 3px; /* Smaller padding for logos */
         }
 
         /* Contact Section */
@@ -742,15 +654,15 @@
             justify-content: center;
             align-items: flex-start;
             flex-wrap: wrap;
-            gap: 3rem;
-            max-width: 1000px;
+            gap: 2rem; /* Adjusted gap */
+            max-width: 900px; /* Adjusted max-width */
             margin: 0 auto;
         }
 
         .contact-content {
             display: flex;
             flex-wrap: wrap;
-            gap: 3rem;
+            gap: 2rem; /* Adjusted gap */
             justify-content: center;
             width: 100%;
         }
@@ -758,52 +670,49 @@
         .contact-form,
         .contact-info,
         .social-links-container {
-            background-color: var(--card-background);
-            border-radius: 15px;
-            padding: 2.5rem;
-            box-shadow: 0 5px 20px rgba(0, 0, 0, 0.3);
-            border: 1px solid var(--border-color);
+            /* Inherits glow-card styles */
+            padding: 2rem; /* Adjusted padding */
             flex: 1;
-            min-width: 300px; /* Ensure minimum width for responsiveness */
-            transition: background-color 0.5s ease, border-color 0.5s ease;
+            min-width: 250px; /* Adjusted min-width for smaller contact cards */
+            max-width: 400px; /* Adjusted max-width for smaller contact cards */
         }
 
         .contact-form {
             flex-basis: 60%; /* Take more space */
-            max-width: 600px;
+            max-width: 550px; /* Adjusted max-width */
         }
 
         .contact-info,
         .social-links-container {
             flex-basis: 30%; /* Take less space */
-            max-width: 350px;
+            max-width: 300px; /* Adjusted max-width */
         }
 
         .contact-form h3,
         .contact-info h3,
         .social-links-container h2 {
-            font-size: 1.8rem;
+            font-size: 1.6rem; /* Adjusted font size */
             font-weight: 600;
             color: var(--primary-color);
-            margin-bottom: 2rem;
+            margin-bottom: 1.5rem; /* Adjusted margin */
             text-align: center;
         }
 
         .form-row {
             display: flex;
-            gap: 1.5rem;
-            margin-bottom: 1.5rem;
+            gap: 1rem; /* Adjusted gap */
+            margin-bottom: 1rem; /* Adjusted margin */
         }
 
         .form-row input,
         .contact-form textarea {
             width: 100%;
-            padding: 1rem;
+            padding: 0.8rem; /* Adjusted padding */
             border: 1px solid var(--border-color);
-            border-radius: 8px;
-            background-color: var(--input-bg); /* Use input-bg variable */
+            border-radius: 6px; /* Slightly smaller border-radius */
+            background-color: var(--background-dark); /* Use background-dark for input fields */
             color: var(--text-light);
-            font-size: 1rem;
+            font-size: 0.95rem; /* Adjusted font size */
             outline: none;
             transition: border-color 0.3s ease, box-shadow 0.3s ease, background-color 0.5s ease, color 0.5s ease;
         }
@@ -811,13 +720,13 @@
         .form-row input:focus,
         .contact-form textarea:focus {
             border-color: var(--primary-color);
-            box-shadow: 0 0 10px rgba(0, 123, 255, 0.5);
+            box-shadow: 0 0 8px rgba(0, 123, 255, 0.5); /* Adjusted shadow */
         }
 
         .contact-form textarea {
             resize: vertical;
-            min-height: 150px;
-            margin-bottom: 1.5rem;
+            min-height: 120px; /* Slightly smaller min-height */
+            margin-bottom: 1rem; /* Adjusted margin */
         }
 
         .contact-form .btn {
@@ -827,8 +736,8 @@
         }
 
         .contact-info p {
-            font-size: 1.1rem;
-            margin-bottom: 1rem;
+            font-size: 1rem; /* Adjusted font size */
+            margin-bottom: 0.8rem; /* Adjusted margin */
             color: var(--secondary-color);
             display: flex;
             align-items: center;
@@ -836,25 +745,25 @@
 
         .contact-info p i {
             color: var(--primary-color);
-            margin-right: 1rem;
-            font-size: 1.3rem;
-            width: 25px; /* Align icons */
+            margin-right: 0.8rem; /* Adjusted margin */
+            font-size: 1.2rem; /* Adjusted font size */
+            width: 22px; /* Align icons */
         }
 
         .social-links-container .social-icons {
             display: flex;
             justify-content: center;
-            margin-top: 1.5rem;
+            margin-top: 1.2rem; /* Adjusted margin */
         }
 
         /* Footer */
         footer {
             background-color: var(--card-background);
-            padding: 1.5rem 2rem;
+            padding: 1.2rem 2rem; /* Adjusted padding */
             text-align: center;
             border-top: 1px solid var(--border-color);
             color: var(--secondary-color);
-            font-size: 0.9rem;
+            font-size: 0.85rem; /* Adjusted font size */
             transition: background-color 0.5s ease, border-color 0.5s ease, color 0.5s ease;
         }
 
@@ -884,9 +793,6 @@
                 flex-basis: 100%;
                 max-width: 100%;
             }
-            .about-content {
-                flex-direction: column;
-            }
         }
 
         @media (max-width: 768px) {
@@ -903,14 +809,14 @@
             nav a {
                 margin: 0.5rem 0.8rem;
             }
-            .theme-toggle {
+            .theme-toggle-container { /* Adjusted for new toggle */
                 margin-top: 1rem;
             }
             .home-content h1 {
-                font-size: 2.8rem;
+                font-size: 2.5rem;
             }
             .typing-text h3 {
-                font-size: 1.6rem;
+                font-size: 1.4rem;
             }
             .section-title {
                 font-size: 2rem;
@@ -922,7 +828,7 @@
             }
             .timeline_left,
             .timeline_right {
-                padding: 0 1rem;
+                padding: 1rem; /* Adjusted padding */
                 text-align: center; /* Ensure text is centered */
             }
             .timeline_centre {
@@ -933,7 +839,7 @@
             }
             .form-row {
                 flex-direction: column;
-                gap: 1rem;
+                gap: 0.8rem;
             }
             .timeline_item:nth-child(odd) {
                 flex-direction: column; /* Ensure stacking for odd items too */
@@ -941,73 +847,59 @@
             .timeline_item:nth-child(even) {
                 flex-direction: column; /* Ensure stacking for even items too */
             }
-            .about-content {
-                flex-direction: column;
-            }
-            .stat-card {
-                min-width: unset; /* Allow cards to shrink on small screens */
-                width: 100%; /* Take full width on very small screens */
-            }
         }
 
         @media (max-width: 480px) {
             .home-content h1 {
-                font-size: 2.2rem;
+                font-size: 2rem;
             }
             .typing-text h3 {
-                font-size: 1.3rem;
+                font-size: 1.1rem;
             }
             .section-title {
-                font-size: 1.8rem;
+                font-size: 1.6rem;
             }
             .project-card, .skill-card {
-                padding: 1.2rem; /* Further reduced padding */
+                padding: 1rem;
             }
             .project-icon, .skill-icon {
-                font-size: 2rem; /* Further reduced icon size */
+                font-size: 2rem;
                 width: 60px;
                 height: 60px;
             }
             .skill-icon {
-                width: 45px;
-                height: 45px;
+                width: 40px;
+                height: 40px;
             }
-            .stat-card {
-                padding: 1rem;
-            }
-            .stat-card .number {
-                font-size: 2rem;
+            .timeline_image-wrapper {
+                width: 70px;
+                height: 70px;
             }
         }
     </style>
 </head>
 <body>
-    <!-- Parallax Star Background Layers -->
-    <div class="stars">
-        <div class="star-layer star-layer-1"></div>
-        <div class="star-layer star-layer-2"></div>
-        <div class="star-layer star-layer-3"></div>
-    </div>
-
     <header>
         <a href="#home" class="fixed-name">Saurav Ojha</a>
         <nav>
             <a href="#home" class="active">Home</a>
-            <a href="#about">About</a>
             <a href="#projects">Projects</a>
             <a href="#skills">Skills</a>
             <a href="#education">Education</a>
             <a href="#experience">Experience</a>
             <a href="#contact">Contact</a>
         </nav>
-        <label id="theme-toggle" class="theme-toggle">
-            <input type="checkbox" id="theme-checkbox">
-            <span class="slider"></span>
+        <!-- Theme Toggle (Modern Icon) -->
+        <label class="theme-toggle-container">
+            <input type="checkbox" id="theme-toggle">
+            <span class="toggle-slider"></span>
         </label>
     </header>
 
     <section id="home" class="home">
-        <div class="home-content">
+        <!-- Three.js Canvas for animated background -->
+        <canvas id="bgCanvas"></canvas>
+        <div class="home-content glow-card">
             <h1>Hi, I'm <span>Saurav Ojha</span></h1>
             <div class="typing-text">
                 <h3>And I'm a <span></span></h3>
@@ -1025,56 +917,28 @@
         </div>
     </section>
 
-    <!-- New About Me Section -->
-    <section id="about" class="about">
-        <h2 class="section-title">About Me</h2>
-        <div class="about-content">
-            <div class="about-img">
-                <img src="https://raw.githubusercontent.com/Eeeeco/Portfolio/main/Mee.png" alt="Saurav Ojha Profile Picture">
-            </div>
-            <div class="about-text">
-                <h3>Saurav Ojha</h3>
-                <p>As a dedicated Data Analyst with a strong foundation in Commerce and a pursuing MBA in Business Analytics, I excel at transforming complex datasets into clear, actionable insights. My expertise spans Python, Power BI, SQL, and Machine Learning, allowing me to uncover trends and drive informed decision-making. With a keen eye for detail and a passion for problem-solving, I am committed to leveraging data to optimize processes and contribute to impactful business outcomes.</p>
-                <div class="stats-container">
-                    <div class="stat-card">
-                        <div class="number" data-target="5">0</div>
-                        <div class="label">Projects</div>
-                    </div>
-                    <div class="stat-card">
-                        <div class="number" data-target="4" data-suffix="+">0</div>
-                        <div class="label">Years of Experience</div>
-                    </div>
-                    <div class="stat-card">
-                        <div class="number" data-target="6.82" data-decimal="2" data-suffix="+">0.00</div>
-                        <div class="label">Aggregate CGPA</div>
-                    </div>
-                </div>
-            </div>
-        </div>
-    </section>
-
     <section id="projects" class="projects">
         <h2 class="section-title">My Projects</h2>
         <div class="projects-container">
-            <div class="project-card">
+            <div class="project-card glow-card">
                 <div class="project-icon heart"><i class="fas fa-heart"></i></div>
                 <h3>Heart Disease Prediction</h3>
                 <p>Analyzed patient data to identify trends and improve healthcare outcomes.</p>
                 <a href="https://github.com/yourusername" target="_blank" class="project-link">View Project</a>
             </div>
-            <div class="project-card">
+            <div class="project-card glow-card">
                 <div class="project-icon insurance"><i class="fas fa-shield-alt"></i></div>
                 <h3>Insurance Claims Prediction</h3>
                 <p>Developed a model to predict insurance claim likelihood.</p>
                 <a href="https://github.com/yourusername" target="_blank" class="project-link">View Project</a>
             </div>
-            <div class="project-card">
+            <div class="project-card glow-card">
                 <div class="project-icon bike"><i class="fas fa-bicycle"></i></div>
                 <h3>Bike Rental Analysis</h3>
                 <p>Analyzed bike rental data to optimize inventory and pricing.</p>
                 <a href="https://github.com/yourusername" target="_blank" class="project-link">View Project</a>
             </div>
-            <div class="project-card">
+            <div class="project-card glow-card">
                 <div class="project-icon house"><i class="fas fa-home"></i></div>
                 <h3>House Price Prediction</h3>
                 <p>Built a machine learning model to predict house prices based on various features.</p>
@@ -1086,7 +950,7 @@
     <section id="skills" class="skills">
         <h2 class="section-title">My Skills</h2>
         <div class="skills-container">
-            <div class="skill-card" data-progress="90">
+            <div class="skill-card glow-card" data-progress="90">
                 <div class="skill-header">
                     <div class="skill-icon python"><i class="fab fa-python"></i></div>
                     <h3>Python</h3>
@@ -1097,7 +961,7 @@
                     </div>
                 </div>
             </div>
-            <div class="skill-card" data-progress="80">
+            <div class="skill-card glow-card" data-progress="80">
                 <div class="skill-header">
                     <div class="skill-icon powerbi"><i class="fas fa-chart-bar"></i></div>
                     <h3>Power BI</h3>
@@ -1108,7 +972,7 @@
                     </div>
                 </div>
             </div>
-            <div class="skill-card" data-progress="90">
+            <div class="skill-card glow-card" data-progress="90">
                 <div class="skill-header">
                     <div class="skill-icon sql"><i class="fas fa-database"></i></div>
                     <h3>SQL</h3>
@@ -1119,7 +983,7 @@
                     </div>
                 </div>
             </div>
-            <div class="skill-card" data-progress="80">
+            <div class="skill-card glow-card" data-progress="80">
                 <div class="skill-header">
                     <div class="skill-icon ml"><i class="fas fa-brain"></i></div>
                     <h3>Machine Learning</h3>
@@ -1130,7 +994,7 @@
                     </div>
                 </div>
             </div>
-            <div class="skill-card" data-progress="80">
+            <div class="skill-card glow-card" data-progress="80">
                 <div class="skill-header">
                     <div class="skill-icon us-healthcare"><i class="fas fa-hospital"></i></div>
                     <h3>US Healthcare</h3>
@@ -1141,7 +1005,7 @@
                     </div>
                 </div>
             </div>
-            <div class="skill-card" data-progress="60">
+            <div class="skill-card glow-card" data-progress="60">
                 <div class="skill-header">
                     <div class="skill-icon graphic-design"><i class="fas fa-paint-brush"></i></div>
                     <h3>Graphic Design</h3>
@@ -1152,7 +1016,7 @@
                     </div>
                 </div>
             </div>
-            <div class="skill-card" data-progress="90">
+            <div class="skill-card glow-card" data-progress="90">
                 <div class="skill-header">
                     <div class="skill-icon ms-excel"><i class="fas fa-file-excel"></i></div>
                     <h3>MS Excel</h3>
@@ -1163,7 +1027,7 @@
                     </div>
                 </div>
             </div>
-            <div class="skill-card" data-progress="40">
+            <div class="skill-card glow-card" data-progress="40">
                 <div class="skill-header">
                     <div class="skill-icon html-css"><i class="fas fa-code"></i></div>
                     <h3>HTML & CSS</h3>
@@ -1174,7 +1038,7 @@
                     </div>
                 </div>
             </div>
-            <div class="skill-card" data-progress="85">
+            <div class="skill-card glow-card" data-progress="85">
                 <div class="skill-header">
                     <div class="skill-icon ds"><i class="fas fa-chart-pie"></i></div>
                     <h3>Data Science</h3>
@@ -1188,46 +1052,43 @@
         </div>
     </section>
 
+    <!-- Education Section -->
     <section id="education" class="section-timeline">
-        <h2 class="section-title">My Education</h2>
+        <h2 class="section-title">Education</h2>
         <div class="timeline_component">
             <div class="timeline_progress">
-                <div class="timeline_progress-bar"></div>
+                <div class="timeline_progress-bar" id="education-progress-bar"></div>
             </div>
             <div class="timeline_item">
                 <div class="timeline_left">
-                    <div class="timeline_date-text">2025 - present</div>
+                    <div class="timeline_date-text">2025 - Present</div>
                 </div>
                 <div class="timeline_centre">
                     <div class="timeline_circle"><i class="fas fa-graduation-cap"></i></div>
                 </div>
                 <div class="timeline_right">
-                    <div class="margin-bottom-xlarge">
-                        <h3>MBA in Business Analytics</h3>
-                        <h4>UPES University</h4>
-                        <div class="timeline_text">Specialized in Business Analytics, Data Science & Machine Learning. Completed coursework in Financial management, database management, and AI.</div>
-                    </div>
+                    <h3>MBA in Business Analytics</h3>
+                    <h4>UPES University</h4>
+                    <p class="timeline_text">Specialized in Business Analytics, Data Science & Machine Learning. Completed coursework in Financial management, database management, and AI.</p>
                     <div class="timeline_image-wrapper">
-                        <img src="https://research.upes.ac.in/wp-content/uploads/2022/06/Logo-Icon.jpg" loading="lazy" alt="UPES University Logo" onerror="this.onerror=null;this.src='https://placehold.co/100x100/3a3a5a/e0e0e0?text=UPES';"/>
+                        <img src="https://placehold.co/100x100/333333/FFFFFF?text=UPES" alt="UPES University Logo">
                     </div>
                 </div>
             </div>
             <div class="timeline_item">
                 <div class="timeline_left">
-                    <div class="timeline_date-text">2019 - 2023</div>
+                    <h3>Bachelor of Commerce</h3>
+                    <h4>IGNOU University</h4>
+                    <p class="timeline_text">Majored in accounting with a focus on Business laws & Management.</p>
+                    <div class="timeline_image-wrapper">
+                        <img src="https://placehold.co/100x100/333333/FFFFFF?text=IGNOU" alt="IGNOU University Logo">
+                    </div>
                 </div>
                 <div class="timeline_centre">
-                    <div class="timeline_circle"><i class="fas fa-school"></i></div>
+                    <div class="timeline_circle"><i class="fas fa-book"></i></div>
                 </div>
                 <div class="timeline_right">
-                    <div class="margin-bottom-xlarge">
-                        <h3>Bachelor of Commerce</h3>
-                        <h4>IGNOU University</h4>
-                        <div class="timeline_text">Majored in accounting with a focus on Business laws & Management.</div>
-                    </div>
-                    <div class="timeline_image-wrapper">
-                        <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRPvWJVb-OsmPrJ6KxqLTtlFOcBC2kzt8QKmw&s" loading="lazy" alt="IGNOU University Logo" onerror="this.onerror=null;this.src='https://placehold.co/100x100/3a3a5a/e0e0e0?text=IGNOU';"/>
-                    </div>
+                    <div class="timeline_date-text">2019 - 2023</div>
                 </div>
             </div>
             <div class="timeline_item">
@@ -1238,24 +1099,23 @@
                     <div class="timeline_circle"><i class="fas fa-school"></i></div>
                 </div>
                 <div class="timeline_right">
-                    <div class="margin-bottom-xlarge">
-                        <h3>Senior Secondary</h3>
-                        <h4>Bhagirath Public School</h4>
-                        <div class="timeline_text">Completed Senior Secondary education with a focus on Commerce and Economics.</div>
-                    </div>
+                    <h3>Senior Secondary</h3>
+                    <h4>Bhagirath Public School</h4>
+                    <p class="timeline_text">Completed Senior Secondary education with a focus on Commerce and Economics.</p>
                     <div class="timeline_image-wrapper">
-                        <img src="https://gcdnb.pbrd.co/images/chFFhIeLENkp.png?o=1" loading="lazy" alt="Bhagirath Public School Logo" onerror="this.onerror=null;this.src='https://placehold.co/100x100/3a3a5a/e0e0e0?text=School';"/>
+                        <img src="https://placehold.co/100x100/333333/FFFFFF?text=School" alt="Bhagirath Public School Logo">
                     </div>
                 </div>
             </div>
         </div>
     </section>
 
-    <section id="experience" class="experience">
-        <h2 class="section-title">My Experience</h2>
+    <!-- Experience Section -->
+    <section id="experience" class="section-timeline">
+        <h2 class="section-title">Work Experience</h2>
         <div class="timeline_component">
             <div class="timeline_progress">
-                <div class="timeline_progress-bar"></div>
+                <div class="timeline_progress-bar" id="experience-progress-bar"></div>
             </div>
             <div class="timeline_item">
                 <div class="timeline_left">
@@ -1265,32 +1125,28 @@
                     <div class="timeline_circle"><i class="fas fa-briefcase"></i></div>
                 </div>
                 <div class="timeline_right">
-                    <div class="margin-bottom-xlarge">
-                        <h3>Senior Executive</h3>
-                        <h4>Pacific Global</h4>
-                        <div class="timeline_text">Leveraged analytical skills to interpret complex data, identify trends, and provide actionable insights within the healthcare revenue cycle.</div>
-                    </div>
+                    <h3>Senior Executive</h3>
+                    <h4>Pacific Global</h4>
+                    <p class="timeline_text">Leveraged analytical skills to interpret complex data, identify trends, and provide actionable insights within the healthcare revenue cycle.</p>
                     <div class="timeline_image-wrapper">
-                        <img src="https://media.licdn.com/dms/image/v2/C4D0BAQEJOUmWnXgvuw/company-logo_200_200/company-logo_200_200/0/1630491550245/pacificbpo_logo?e=2147483647&v=beta&t=gDVvxLm7_8UBoREweyYcVkY7R1reg5Z1r1Jj00PSTPE" loading="lazy" alt="Pacific Global Logo" onerror="this.onerror=null;this.src='https://placehold.co/100x100/3a3a5a/e0e0e0?text=Pacific';"/>
+                        <img src="https://placehold.co/100x100/333333/FFFFFF?text=Pacific" alt="Pacific Global Logo">
                     </div>
                 </div>
             </div>
             <div class="timeline_item">
                 <div class="timeline_left">
-                    <div class="timeline_date-text">2021 - 2023</div>
+                    <h3>Analyst 2</h3>
+                    <h4>R1RCM</h4>
+                    <p class="timeline_text">Performed advanced data analysis and predictive modeling for healthcare claims.</p>
+                    <div class="timeline_image-wrapper">
+                        <img src="https://placehold.co/100x100/333333/FFFFFF?text=R1" alt="R1RCM Logo">
+                    </div>
                 </div>
                 <div class="timeline_centre">
-                    <div class="timeline_circle"><i class="fas fa-briefcase"></i></div>
+                    <div class="timeline_circle"><i class="fas fa-chart-line"></i></div>
                 </div>
                 <div class="timeline_right">
-                    <div class="margin-bottom-xlarge">
-                        <h3>Analyst 2</h3>
-                        <h4>R1RCM</h4>
-                        <div class="timeline_text">Performed advanced data analysis and predictive modeling for healthcare claims.</div>
-                    </div>
-                    <div class="timeline_image-wrapper">
-                        <img src="https://www.naukri.com/hotjobs/images/v3/R1RCM_Dec23.gif" loading="lazy" alt="R1RCM Logo" onerror="this.onerror=null;this.src='https://placehold.co/100x100/3a3a5a/e0e0e0?text=R1RCM';"/>
-                    </div>
+                    <div class="timeline_date-text">2021 - 2023</div>
                 </div>
             </div>
             <div class="timeline_item">
@@ -1298,35 +1154,31 @@
                     <div class="timeline_date-text">2020 - 2021</div>
                 </div>
                 <div class="timeline_centre">
-                    <div class="timeline_circle"><i class="fas fa-briefcase"></i></div>
+                    <div class="timeline_circle"><i class="fas fa-users"></i></div>
                 </div>
                 <div class="timeline_right">
-                    <div class="margin-bottom-xlarge">
-                        <h3>Associate</h3>
-                        <h4>Tech Mahindra</h4>
-                        <div class="timeline_text">Handled data processing, reporting, and analysis tasks to support client decision-making.</div>
-                    </div>
+                    <h3>Associate</h3>
+                    <h4>Tech Mahindra</h4>
+                    <p class="timeline_text">Handled data processing, reporting, and analysis tasks to support client decision-making.</p>
                     <div class="timeline_image-wrapper">
-                        <img src="https://pbs.twimg.com/profile_images/1808469148504358912/0aA17dCE_400x400.jpg" loading="lazy" alt="Tech Mahindra Logo" onerror="this.onerror=null;this.src='https://placehold.co/100x100/3a3a5a/e0e0e0?text=Tech+M';"/>
+                        <img src="https://placehold.co/100x100/333333/FFFFFF?text=TechM" alt="Tech Mahindra Logo">
                     </div>
                 </div>
             </div>
             <div class="timeline_item">
                 <div class="timeline_left">
-                    <div class="timeline_date-text">2019 - 2020</div>
+                    <h3>Customer Service Executive</h3>
+                    <h4>iEnergizer</h4>
+                    <p class="timeline_text">Provided customer support, resolved queries, and maintained high service standards in a fast-paced environment.</p>
+                    <div class="timeline_image-wrapper">
+                        <img src="https://placehold.co/100x100/333333/FFFFFF?text=iEnergizer" alt="iEnergizer Logo">
+                    </div>
                 </div>
                 <div class="timeline_centre">
                     <div class="timeline_circle"><i class="fas fa-headset"></i></div>
                 </div>
                 <div class="timeline_right">
-                    <div class="margin-bottom-xlarge">
-                        <h3>Customer Service Executive</h3>
-                        <h4>iEnergizer</h4>
-                        <div class="timeline_text">Provided customer support, resolved queries, and maintained high service standards in a fast-paced environment.</div>
-                    </div>
-                    <div class="timeline_image-wrapper">
-                        <img src="https://media.licdn.com/dms/image/v2/D4D0BAQFC9G8s1cmqXg/company-logo_200_200/company-logo_200_200/0/1685106243007/ienergizer_logo?e=2147483647&v=beta&t=fWW2FnpCHgaouGdBqDXUTHh3wT630GoESzOm9O7lOFk" loading="lazy" alt="iEnergizer Logo" onerror="this.onerror=null;this.src='https://placehold.co/100x100/3a3a5a/e0e0e0?text=iEnergizer';"/>
-                    </div>
+                    <div class="timeline_date-text">2019 - 2020</div>
                 </div>
             </div>
         </div>
@@ -1335,228 +1187,284 @@
     <section id="contact" class="contact">
         <h2 class="section-title">Contact Me</h2>
         <div class="contact-container">
+            <div class="contact-form glow-card">
+                <h3>Send a Message</h3>
+                <form action="#" method="POST">
+                    <div class="form-row">
+                        <input type="text" placeholder="Your Name" required>
+                        <input type="email" placeholder="Your Email" required>
+                    </div>
+                    <div class="form-row">
+                        <input type="text" placeholder="Your Subject" required>
+                    </div>
+                    <textarea placeholder="Your Message" required></textarea>
+                    <button type="submit" class="btn">Send Message</button>
+                </form>
+            </div>
             <div class="contact-content">
-                <div class="contact-form">
-                    <h3>Send Me a Message</h3>
-                    <form action="#" method="post">
-                        <div class="form-row">
-                            <input type="text" name="name" placeholder="Your Name" required>
-                            <input type="email" name="email" placeholder="Your Email" required>
-                        </div>
-                        <textarea name="message" placeholder="Your Message" required></textarea>
-                        <button type="submit" class="btn">Send Message</button>
-                    </form>
-                </div>
-                <div class="contact-info">
+                <div class="contact-info glow-card">
                     <h3>Contact Information</h3>
-                    <p><i class="fas fa-envelope"></i> sauravojha124@gmail.com</p>
-                    <p><i class="fas fa-phone"></i> +1 123 456 7890</p>
-                    <p><i class="fas fa-map-marker-alt"></i> Noida, India</p>
+                    <p><i class="fas fa-map-marker-alt"></i> New Delhi, India</p>
+                    <p><i class="fas fa-envelope"></i> sauravojha@example.com</p>
+                    <p><i class="fas fa-phone"></i> +91 98765 43210</p>
                 </div>
-                <div class="social-links-container">
-                    <h2>Social Links</h2>
+                <div class="social-links-container glow-card">
+                    <h2>Connect with me</h2>
                     <div class="social-icons">
-                        <a href="https://www.linkedin.com/in/sauravojha/" target="_blank" data-href="https://www.linkedin.com/in/sauravojha/"><i class="fab fa-linkedin"></i></a>
-                        <a href="https://github.com/yourusername" target="_blank" data-href="https://github.com/yourusername"><i class="fab fa-github"></i></a>
-                        <a href="#" target="_blank" data-href="#"><i class="fab fa-twitter"></i></a>
+                        <a href="https://www.linkedin.com/in/sauravojha/" target="_blank"><i class="fab fa-linkedin"></i></a>
+                        <a href="https://github.com/yourusername" target="_blank"><i class="fab fa-github"></i></a>
+                        <a href="#" target="_blank"><i class="fab fa-twitter"></i></a>
                     </div>
                 </div>
             </div>
         </div>
     </section>
 
-    <footer id="footer">
-        <div class="footer-container">
-            <div class="copyright">© 2024 Saurav Ojha. All rights reserved.</div>
-        </div>
+    <footer>
+        <p>&copy; 2025 Saurav Ojha. All rights reserved.</p>
     </footer>
 
+    <!-- Three.js CDN -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/three.js/r128/three.min.js"></script>
     <script>
-        // Smooth scrolling for navigation links
-        document.querySelectorAll('nav a').forEach(anchor => {
-            anchor.addEventListener('click', function (e) {
-                e.preventDefault();
-                document.querySelector(this.getAttribute('href')).scrollIntoView({
-                    behavior: 'smooth'
-                });
+        // Theme Toggle Logic
+        const themeToggle = document.getElementById('theme-toggle');
+        const body = document.body;
 
-                // Update active class
-                document.querySelectorAll('nav a').forEach(link => link.classList.remove('active'));
-                this.classList.add('active');
-            });
-        });
+        // Check for saved theme preference
+        const savedTheme = localStorage.getItem('theme');
+        if (savedTheme) {
+            body.classList.add(savedTheme);
+            if (savedTheme === 'light-mode') {
+                themeToggle.checked = true;
+            }
+        } else {
+            // Default to dark mode if no preference is saved
+            body.classList.add('dark-mode'); // Assuming dark-mode is the default
+            themeToggle.checked = false;
+        }
 
-        // Highlight active nav link on scroll
-        window.addEventListener('scroll', () => {
-            const sections = document.querySelectorAll('section');
-            const navLinks = document.querySelectorAll('nav a');
-
-            sections.forEach(section => {
-                const sectionTop = section.offsetTop - 100; // Adjust offset for header height
-                const sectionHeight = section.clientHeight;
-                if (pageYOffset >= sectionTop && pageYOffset < sectionTop + sectionHeight) {
-                    navLinks.forEach(link => {
-                        link.classList.remove('active');
-                        if (link.getAttribute('href') === '#' + section.id) {
-                            link.classList.add('active');
-                        }
-                    });
-                }
-            });
-        });
-
-        // Typing effect for the home section
-        const typingTextElement = document.querySelector('.typing-text h3 span');
-        const phrases = ["Data Analyst", "Machine Learning Enthusiast", "Problem Solver"];
-        let phraseIndex = 0;
-        let charIndex = 0;
-        let isDeleting = false;
-
-        function typeEffect() {
-            const currentPhrase = phrases[phraseIndex];
-            const currentText = isDeleting
-                ? currentPhrase.substring(0, charIndex - 1)
-                : currentPhrase.substring(0, charIndex + 1);
-
-            typingTextElement.textContent = currentText;
-
-            if (!isDeleting && charIndex < currentPhrase.length) {
-                charIndex++;
-                setTimeout(typeEffect, 100); // Typing speed
-            } else if (isDeleting && charIndex > 0) {
-                charIndex--;
-                setTimeout(typeEffect, 50); // Deleting speed
+        themeToggle.addEventListener('change', () => {
+            if (themeToggle.checked) {
+                body.classList.remove('dark-mode');
+                body.classList.add('light-mode');
+                localStorage.setItem('theme', 'light-mode');
             } else {
-                isDeleting = !isDeleting;
-                if (!isDeleting) {
-                    phraseIndex = (phraseIndex + 1) % phrases.length;
+                body.classList.remove('light-mode');
+                body.classList.add('dark-mode');
+                localStorage.setItem('theme', 'dark-mode');
+            }
+            // Update Three.js background colors on theme change
+            if (window.backgroundMaterial) {
+                updateThreeJSColors(window.backgroundMaterial);
+            }
+            // Removed updateGlowColors() call as glow-card::before/after are removed
+        });
+
+        // Function to update glow border colors based on theme (now empty as glow effect is removed)
+        function updateGlowColors() {
+            // No action needed as conic-gradient glow has been removed.
+        }
+
+        // --- Three.js Animated Background (Jarvis-like blue waves with subtle grid) ---
+        let scene, camera, renderer, material, mesh;
+
+        function initThreeJS() {
+            const canvas = document.getElementById('bgCanvas');
+            scene = new THREE.Scene();
+            camera = new THREE.PerspectiveCamera(75, window.innerWidth / window.innerHeight, 0.1, 1000);
+            renderer = new THREE.WebGLRenderer({ canvas: canvas, antialias: true, alpha: true });
+            renderer.setSize(window.innerWidth, window.innerHeight);
+            renderer.setPixelRatio(window.devicePixelRatio);
+
+            // Create a plane for the background
+            const geometry = new THREE.PlaneGeometry(20, 20, 100, 100); // Larger plane, more segments
+
+            // Custom Shader Material for the Jarvis-like effect
+            const vertexShader = `
+                uniform float time;
+                uniform float amplitude;
+                uniform float frequency;
+                varying vec2 vUv;
+
+                void main() {
+                    vUv = uv;
+                    vec3 newPosition = position;
+                    // Create a wavy effect using sine waves
+                    newPosition.z += sin(newPosition.x * frequency + time) * amplitude;
+                    newPosition.z += cos(newPosition.y * frequency * 0.5 + time * 0.8) * amplitude * 0.7;
+                    gl_Position = projectionMatrix * modelViewMatrix * vec4(newPosition, 1.0);
                 }
-                setTimeout(typeEffect, 1000); // Pause before next action
+            `;
+
+            const fragmentShader = `
+                uniform float time;
+                uniform vec3 color1;
+                uniform vec3 color2;
+                uniform vec3 gridColor;
+                uniform float gridThickness;
+                varying vec2 vUv;
+
+                void main() {
+                    // Create a gradient based on UV coordinates and time
+                    vec3 baseColor = mix(color1, color2, vUv.y + sin(vUv.x * 10.0 + time * 0.5) * 0.1);
+
+                    // Refined grid lines for a softer, less "shining round round" effect
+                    float gridX = fract(vUv.x * 50.0);
+                    float gridY = fract(vUv.y * 50.0);
+
+                    float gridLineX = smoothstep(0.0, gridThickness, gridX) - smoothstep(1.0 - gridThickness, 1.0, gridX);
+                    float gridLineY = smoothstep(0.0, gridThickness, gridY) - smoothstep(1.0 - gridThickness, 1.0, gridY);
+
+                    float finalGridFactor = max(gridLineX, gridLineY); // Combine grid lines
+
+                    // Mix base color with grid lines, making grid color subtle
+                    vec3 finalColor = mix(baseColor, gridColor, finalGridFactor * 0.3); // Original grid intensity
+
+                    gl_FragColor = vec4(finalColor, 0.8); // Original overall transparency
+                }
+            `;
+
+            material = new THREE.ShaderMaterial({
+                uniforms: {
+                    time: { value: 0.0 },
+                    amplitude: { value: 0.5 }, // Original wave height
+                    frequency: { value: 2.0 }, // Original wave density
+                    color1: { value: new THREE.Color(0x0000FF) }, // Deep Blue
+                    color2: { value: new THREE.Color(0x00BFFF) }, // Light Blue
+                    gridColor: { value: new THREE.Color(0x00FFFF) }, // Cyan for grid
+                    gridThickness: { value: 0.02 } // Original grid thickness
+                },
+                vertexShader: vertexShader,
+                fragmentShader: fragmentShader,
+                transparent: true,
+            });
+
+            mesh = new THREE.Mesh(geometry, material);
+            scene.add(mesh);
+
+            camera.position.z = 5;
+
+            // Store material globally to update colors on theme change
+            window.backgroundMaterial = material;
+
+            // Initial color update based on current theme
+            updateThreeJSColors(material);
+        }
+
+        function updateThreeJSColors(material) {
+            if (body.classList.contains('light-mode')) {
+                // Light theme colors (original subtle settings)
+                material.uniforms.color1.value.set(0xFFD700); // Gold
+                material.uniforms.color2.value.set(0xFFC107); // Amber
+                material.uniforms.gridColor.value.set(0xFFFAF0); // Ivory/Beige
+                material.uniforms.amplitude.value = 0.2; // Less intense waves for light theme
+                material.uniforms.frequency.value = 1.0; // Less dense waves
+                material.uniforms.gridThickness.value = 0.01; // Thinner grid for light theme
+            } else {
+                // Dark theme colors (original Jarvis-like blue settings)
+                material.uniforms.color1.value.set(0x0000FF); // Deep Blue
+                material.uniforms.color2.value.set(0x00BFFF); // Light Blue
+                material.uniforms.gridColor.value.set(0x00FFFF); // Cyan for grid
+                material.uniforms.amplitude.value = 0.5; // Default wave height
+                material.uniforms.frequency.value = 2.0; // Default wave density
+                material.uniforms.gridThickness.value = 0.02; // Default grid thickness
             }
         }
 
-        // Skill bar animation on scroll
+        function animate() {
+            requestAnimationFrame(animate);
+
+            // Update time uniform for animation
+            if (material && material.uniforms) { // Check if material and uniforms exist
+                material.uniforms.time.value += 0.005;
+            }
+
+            renderer.render(scene, camera);
+        }
+
+        function onWindowResize() {
+            camera.aspect = window.innerWidth / window.innerHeight;
+            camera.updateProjectionMatrix();
+            renderer.setSize(window.innerWidth, window.innerHeight);
+        }
+
+        window.addEventListener('resize', onWindowResize);
+
+        // --- Typing Animation ---
+        const typingTextElement = document.querySelector('.typing-text h3 span');
+        const words = ["Data Analyst", "ML Enthusiast", "Problem Solver"];
+        let wordIndex = 0;
+        let charIndex = 0;
+        let isDeleting = false;
+
+        function typeWriter() {
+            const currentWord = words[wordIndex];
+            if (isDeleting) {
+                typingTextElement.textContent = currentWord.substring(0, charIndex - 1);
+                charIndex--;
+            } else {
+                typingTextElement.textContent = currentWord.substring(0, charIndex + 1);
+                charIndex++;
+            }
+
+            if (!isDeleting && charIndex === currentWord.length) {
+                setTimeout(() => isDeleting = true, 1500);
+            } else if (isDeleting && charIndex === 0) {
+                isDeleting = false;
+                wordIndex = (wordIndex + 1) % words.length;
+            }
+
+            const typingSpeed = isDeleting ? 50 : 150;
+            setTimeout(typeWriter, typingSpeed);
+        }
+
+        // --- Scroll-based Animations (Skills & Timeline) ---
         function animateSkillBars() {
             const skillCards = document.querySelectorAll('.skill-card');
             skillCards.forEach(card => {
                 const progressBar = card.querySelector('.progress-bar');
                 const progressValue = card.getAttribute('data-progress');
                 const rect = card.getBoundingClientRect();
-
-                // Animate if skill card is in viewport
                 if (rect.top < window.innerHeight && rect.bottom > 0) {
                     progressBar.style.width = progressValue + '%';
                 } else {
-                    // Optionally reset if out of view, or keep animated if already shown
-                    // progressBar.style.width = '0%';
+                    progressBar.style.width = '0%'; // Reset when out of view
                 }
             });
         }
 
-        // Timeline progress bar animation on scroll
-        function animateTimeline() {
+        function animateTimelineProgress() {
             const timelineComponents = document.querySelectorAll('.timeline_component');
             timelineComponents.forEach(component => {
                 const progressBar = component.querySelector('.timeline_progress-bar');
                 const rect = component.getBoundingClientRect();
-                const componentTop = rect.top + window.scrollY;
                 const componentHeight = component.clientHeight;
 
-                // Calculate scroll progress within the timeline component
-                const scrollPosition = window.scrollY;
-                const visibleHeight = window.innerHeight;
+                // Calculate how much of the component is visible
+                const visibleHeight = Math.min(rect.bottom, window.innerHeight) - Math.max(rect.top, 0);
+                const progressPercentage = (visibleHeight / componentHeight) * 100;
 
-                // When the component enters the viewport, start animating the bar
-                if (scrollPosition + visibleHeight > componentTop && scrollPosition < componentTop + componentHeight) {
-                    const scrolledThrough = (scrollPosition + visibleHeight - componentTop);
-                    const progress = Math.min(1, scrolledThrough / (componentHeight + visibleHeight)); // Max 100%
-                    progressBar.style.height = `${progress * 100}%`;
-                } else if (scrollPosition >= componentTop + componentHeight) {
-                    progressBar.style.height = '100%'; // Ensure it's full if scrolled past
+                if (progressPercentage > 0) {
+                    progressBar.style.height = Math.min(progressPercentage, 100) + '%';
                 } else {
-                    progressBar.style.height = '0%'; // Reset if not in view yet
+                    progressBar.style.height = '0%';
                 }
             });
         }
 
-        // Animated Counters for About Me section
-        function animateCounters() {
-            document.querySelectorAll('.stat-card .number').forEach(counter => {
-                const target = parseFloat(counter.getAttribute('data-target'));
-                const suffix = counter.getAttribute('data-suffix') || '';
-                const decimalPlaces = parseInt(counter.getAttribute('data-decimal')) || 0;
-                const duration = 2000; // milliseconds
-                let start = 0;
-                let startTime = null;
-
-                const animate = (currentTime) => {
-                    if (!startTime) startTime = currentTime;
-                    const progress = (currentTime - startTime) / duration;
-                    const currentValue = start + (target - start) * Math.min(progress, 1);
-
-                    counter.textContent = currentValue.toFixed(decimalPlaces) + suffix;
-
-                    if (progress < 1) {
-                        requestAnimationFrame(animate);
-                    }
-                };
-
-                const observer = new IntersectionObserver((entries) => {
-                    entries.forEach(entry => {
-                        if (entry.isIntersecting) {
-                            requestAnimationFrame(animate);
-                            observer.unobserve(entry.target); // Stop observing once animated
-                        }
-                    });
-                }, { threshold: 0.5 }); // Trigger when 50% of the element is visible
-
-                observer.observe(counter);
-            });
-        }
-
-
-        // Theme Toggle (Light/Dark Mode - improved implementation)
-        const themeCheckbox = document.getElementById('theme-checkbox');
-
-        themeCheckbox.addEventListener('change', () => {
-            document.body.classList.toggle('light-mode', themeCheckbox.checked);
-            localStorage.setItem('theme', themeCheckbox.checked ? 'light' : 'dark');
-        });
-
-        // Apply saved theme on load and set correct checkbox state
-        document.addEventListener('DOMContentLoaded', () => {
-            const savedTheme = localStorage.getItem('theme');
-            if (savedTheme === 'light') {
-                document.body.classList.add('light-mode');
-                themeCheckbox.checked = true;
-            } else {
-                document.body.classList.remove('light-mode');
-                themeCheckbox.checked = false;
-            }
-        });
-
-
-        // Initial setup for timeline progress bar visibility
-        document.addEventListener('DOMContentLoaded', () => {
-            const timelineComponents = document.querySelectorAll('.timeline_component');
-            timelineComponents.forEach(component => {
-                const progressBar = component.querySelector('.timeline_progress-bar');
-                progressBar.style.height = '0%'; // Ensure initial state is 0
-            });
-
-            // Start typing effect and other animations on load
-            typeEffect();
-            animateSkillBars();
-            animateTimeline();
-            animateCounters();
-        });
-
-        // Add scroll event listener to trigger animations
+        // Initial calls and event listeners
         window.addEventListener('scroll', () => {
             animateSkillBars();
-            animateTimeline();
+            animateTimelineProgress();
         });
-
+        window.addEventListener('load', () => {
+            typeWriter(); // Start typing animation
+            initThreeJS(); // Initialize Three.js
+            animate(); // Start Three.js animation loop
+            animateSkillBars(); // Initial check for skills in view
+            animateTimelineProgress(); // Initial check for timeline in view
+        });
     </script>
 </body>
 </html>
