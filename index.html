@@ -1132,14 +1132,14 @@
             </div>
             <p>A passionate data analyst with expertise in Python, Power BI, SQL, and Machine Learning. I love turning data into actionable insights.</p>
             <div class="social-icons">
-                <a href="https://www.linkedin.com/in/sauravojha/" target="_blank" data-href="https://www.linkedin.com/in/sauravojha/"><i class="fab fa-linkedin"></i></a>
-                <a href="https://github.com/yourusername" target="_blank" data-href="https://github.com/yourusername"><i class="fab fa-github"></i></a>
-                <a href="#" target="_blank" data-href="#"><i class="fab fa-twitter"></i></a>
+                <a href="https://www.linkedin.com/in/sauravojha/" target="_blank"><i class="fab fa-linkedin"></i></a>
+                <a href="https://github.com/yourusername" target="_blank"><i class="fab fa-github"></i></a>
+                <a href="#" target="_blank"><i class="fab fa-twitter"></i></a>
             </div>
-            <a href="#" class="btn">Download CV</a>
+            <a href="#" class="btn">Download CV</a> <!-- TODO: Replace # with actual CV download link -->
         </div>
         <div class="home-img">
-            <img src="https://raw.githubusercontent.com/Eeeeco/Portfolio/main/Mee.png" alt="Profile Picture">
+            <img src="https://raw.githubusercontent.com/Eeeeco/Portfolio/main/Mee.png" alt="Profile Picture" loading="lazy">
         </div>
     </section>
 
@@ -1320,7 +1320,8 @@
                     <h4>UPES University</h4>
                     <p class="timeline_text">Specialized in Business Analytics, Data Science & Machine Learning. Completed coursework in Financial management, database management, and AI.</p>
                     <div class="timeline_image-wrapper">
-                        <img src="https://placehold.co/100x100/333333/FFFFFF?text=UPES" alt="UPES University Logo">
+                        <!-- TODO: Replace placeholder with actual UPES University Logo -->
+                        <img src="https://placehold.co/100x100/333333/FFFFFF?text=UPES" alt="UPES University Logo" loading="lazy">
                     </div>
                 </div>
             </div>
@@ -1336,7 +1337,8 @@
                     <h4>IGNOU University</h4>
                     <p class="timeline_text">Majored in accounting with a focus on Business laws & Management.</p>
                     <div class="timeline_image-wrapper">
-                        <img src="https://placehold.co/100x100/333333/FFFFFF?text=IGNOU" alt="IGNOU University Logo">
+                        <!-- TODO: Replace placeholder with actual IGNOU University Logo -->
+                        <img src="https://placehold.co/100x100/333333/FFFFFF?text=IGNOU" alt="IGNOU University Logo" loading="lazy">
                     </div>
                 </div>
             </div>
@@ -1352,7 +1354,8 @@
                     <h4>Bhagirath Public School</h4>
                     <p class="timeline_text">Completed Senior Secondary education with a focus on Commerce and Economics.</p>
                     <div class="timeline_image-wrapper">
-                        <img src="https://placehold.co/100x100/333333/FFFFFF?text=School" alt="Bhagirath Public School Logo">
+                        <!-- TODO: Replace placeholder with actual Bhagirath Public School Logo -->
+                        <img src="https://placehold.co/100x100/333333/FFFFFF?text=School" alt="Bhagirath Public School Logo" loading="lazy">
                     </div>
                 </div>
             </div>
@@ -1378,7 +1381,8 @@
                     <h4>Pacific Global</h4>
                     <p class="timeline_text">Leveraged analytical skills to interpret complex data, identify trends, and provide actionable insights within the healthcare revenue cycle.</p>
                     <div class="timeline_image-wrapper">
-                        <img src="https://placehold.co/100x100/333333/FFFFFF?text=Pacific" alt="Pacific Global Logo">
+                        <!-- TODO: Replace placeholder with actual Pacific Global Logo -->
+                        <img src="https://placehold.co/100x100/333333/FFFFFF?text=Pacific" alt="Pacific Global Logo" loading="lazy">
                     </div>
                 </div>
             </div>
@@ -1394,7 +1398,8 @@
                     <h4>R1RCM</h4>
                     <p class="timeline_text">Performed advanced data analysis and predictive modeling for healthcare claims.</p>
                     <div class="timeline_image-wrapper">
-                        <img src="https://placehold.co/100x100/333333/FFFFFF?text=R1" alt="R1RCM Logo">
+                        <!-- TODO: Replace placeholder with actual R1RCM Logo -->
+                        <img src="https://placehold.co/100x100/333333/FFFFFF?text=R1" alt="R1RCM Logo" loading="lazy">
                     </div>
                 </div>
             </div>
@@ -1410,7 +1415,8 @@
                     <h4>Tech Mahindra</h4>
                     <p class="timeline_text">Handled data processing, reporting, and analysis tasks to support client decision-making.</p>
                     <div class="timeline_image-wrapper">
-                        <img src="https://placehold.co/100x100/333333/FFFFFF?text=TechM" alt="Tech Mahindra Logo">
+                        <!-- TODO: Replace placeholder with actual Tech Mahindra Logo -->
+                        <img src="https://placehold.co/100x100/333333/FFFFFF?text=TechM" alt="Tech Mahindra Logo" loading="lazy">
                     </div>
                 </div>
             </div>
@@ -1426,7 +1432,8 @@
                     <h4>iEnergizer</h4>
                     <p class="timeline_text">Provided customer support, resolved queries, and maintained high service standards in a fast-paced environment.</p>
                     <div class="timeline_image-wrapper">
-                        <img src="https://placehold.co/100x100/333333/FFFFFF?text=iEnergizer" alt="iEnergizer Logo">
+                        <!-- TODO: Replace placeholder with actual iEnergizer Logo -->
+                        <img src="https://placehold.co/100x100/333333/FFFFFF?text=iEnergizer" alt="iEnergizer Logo" loading="lazy">
                     </div>
                 </div>
             </div>
@@ -1438,7 +1445,7 @@
         <div class="contact-container">
             <div class="contact-form glow-card">
                 <h3>Send a Message</h3>
-                <form action="#" method="POST">
+                <form action="#" method="POST"> <!-- TODO: Update form action to a real endpoint for form submission -->
                     <div class="form-row">
                         <input type="text" placeholder="Your Name" required>
                         <input type="email" placeholder="Your Email" required>
@@ -1684,21 +1691,19 @@
                 });
             }
 
+            // Fix for timeline progress bar: fills to 100% when component is visible
             function animateTimelineProgress() {
                 const timelineComponents = document.querySelectorAll('.timeline_component');
                 timelineComponents.forEach(component => {
                     const progressBar = component.querySelector('.timeline_progress-bar');
                     const rect = component.getBoundingClientRect();
-                    const componentHeight = component.clientHeight;
+                    const viewportHeight = window.innerHeight;
 
-                    // Calculate how much of the component is visible
-                    const visibleHeight = Math.min(rect.bottom, window.innerHeight) - Math.max(rect.top, 0);
-                    const progressPercentage = (visibleHeight / componentHeight) * 100;
-
-                    if (progressPercentage > 0) {
-                        progressBar.style.height = Math.min(progressPercentage, 100) + '%';
+                    // If the component is currently visible on screen
+                    if (rect.top < viewportHeight && rect.bottom > 0) {
+                        progressBar.style.height = '100%'; // Fill it completely
                     } else {
-                        progressBar.style.height = '0%';
+                        progressBar.style.height = '0%'; // Reset when out of view
                     }
                 });
             }
