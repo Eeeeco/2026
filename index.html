@@ -347,7 +347,7 @@
         /* About Section Styles */
         .about {
             padding: 4.5rem 4%; /* Reduced padding */
-            background-color: var(--card-background); /* Changed to match card background for consistency */
+            background-color: var(--background-dark); /* Changed to match other sections */
             text-align: center;
             position: relative; /* Added for z-index to work */
             z-index: 1; /* Added to ensure it's above the canvas */
@@ -356,6 +356,13 @@
         .about-content {
             max-width: 800px; /* Reduced max-width */
             margin: 0 auto;
+            /* Added glow-card styling for consistency */
+            background-color: var(--card-background);
+            border-radius: 12px; /* Slightly smaller radius */
+            padding: 1.8rem; /* Adjusted padding */
+            box-shadow: 0 4px 15px rgba(0, 0, 0, 0.25); /* Reduced shadow */
+            border: 1px solid var(--border-color);
+            transition: background-color 0.5s ease, border-color 0.5s ease;
         }
 
         .about-intro-text {
@@ -574,7 +581,7 @@
             padding-top: 1.5rem; /* Reduced padding */
         }
 
-        /* Keep the progress bar visible */
+        /* Re-added timeline progress bar CSS */
         .timeline_progress {
             position: absolute;
             left: 50%;
@@ -594,6 +601,7 @@
             left: 0;
             transition: height 1s ease-out; /* Animation for the bar */
         }
+
 
         /* Consistent timeline item layout: Date on left, content on right */
         .timeline_item {
@@ -675,27 +683,30 @@
             margin-bottom: 0.6rem; /* Adjusted margin */
         }
 
+        /* Removed timeline image wrapper CSS */
+        /*
         .timeline_image-wrapper {
-            width: 60px; /* Smaller width for logos */
-            height: 60px; /* Smaller height for logos */
+            width: 60px;
+            height: 60px;
             overflow: hidden;
-            border-radius: 6px; /* Slightly smaller border-radius */
-            border: 1px solid var(--border-color); /* Thinner border */
+            border-radius: 6px;
+            border: 1px solid var(--border-color);
             display: flex;
             justify-content: center;
             align-items: center;
             background-color: var(--card-background);
-            box-shadow: 0 1px 4px rgba(0, 0, 0, 0.15); /* More subtle shadow */
-            margin-top: 0.6rem; /* Adjusted space from text */
+            box-shadow: 0 1px 4px rgba(0, 0, 0, 0.15);
+            margin-top: 0.6rem;
             transition: background-color 0.5s ease, border-color 0.5s ease;
         }
 
         .timeline_image-wrapper img {
-            width: 90%; /* Ensure logo fits without cropping */
+            width: 90%;
             height: 90%;
             object-fit: contain;
-            padding: 2px; /* Smaller padding for logos */
+            padding: 2px;
         }
+        */
 
         /* Contact Section */
         .contact {
@@ -1027,8 +1038,9 @@
             .timeline_centre {
                 margin: 0.6rem 0;
             }
+            /* Re-added timeline progress bar CSS for mobile */
             .timeline_progress {
-                left: 50%; /* Keep vertical line centered */
+                left: 50%;
             }
             .form-row {
                 flex-direction: column;
@@ -1050,10 +1062,13 @@
                 width: 30px;
                 height: 30px;
             }
+            /* Removed timeline image wrapper CSS for mobile */
+            /*
             .timeline_image-wrapper {
                 width: 50px;
                 height: 50px;
             }
+            */
             .stat-card {
                 min-width: 120px;
                 max-width: 160px;
@@ -1149,7 +1164,7 @@
 
     <!-- About Me Section -->
     <section id="about" class="about">
-        <div class="about-content">
+        <div class="about-content glow-card"> <!-- Added glow-card class here -->
             <h2 class="section-title">About Me</h2>
             <p class="about-intro-text">Saurav Ojha</p>
             <p class="about-description">As a dedicated Data Analyst with a strong foundation in Commerce and a pursuing MBA in Business Analytics, I excel at transforming complex datasets into clear, actionable insights. My expertise spans Python, Power BI, SQL, and Machine Learning, allowing me to uncover trends and drive informed decision-making. With a keen eye for detail and a passion for problem-solving, I am committed to leveraging data to optimize processes and contribute to impactful business outcomes.</p>
@@ -1309,6 +1324,7 @@
     <section id="education" class="section-timeline">
         <h2 class="section-title">Education</h2>
         <div class="timeline_component">
+            <!-- Re-added timeline progress bar -->
             <div class="timeline_progress">
                 <div class="timeline_progress-bar" id="education-progress-bar"></div>
             </div>
@@ -1323,10 +1339,6 @@
                     <h3>MBA in Business Analytics</h3>
                     <h4>UPES University</h4>
                     <p class="timeline_text">Specialized in Business Analytics, Data Science & Machine Learning. Completed coursework in Financial management, database management, and AI.</p>
-                    <div class="timeline_image-wrapper">
-                        <!-- TODO: Replace placeholder with actual UPES University Logo -->
-                        <img src="https://placehold.co/100x100/333333/FFFFFF?text=UPES" alt="UPES University Logo" loading="lazy">
-                    </div>
                 </div>
             </div>
             <div class="timeline_item">
@@ -1340,10 +1352,6 @@
                     <h3>Bachelor of Commerce</h3>
                     <h4>IGNOU University</h4>
                     <p class="timeline_text">Majored in accounting with a focus on Business laws & Management.</p>
-                    <div class="timeline_image-wrapper">
-                        <!-- TODO: Replace placeholder with actual IGNOU University Logo -->
-                        <img src="https://placehold.co/100x100/333333/FFFFFF?text=IGNOU" alt="IGNOU University Logo" loading="lazy">
-                    </div>
                 </div>
             </div>
             <div class="timeline_item">
@@ -1357,10 +1365,6 @@
                     <h3>Senior Secondary</h3>
                     <h4>Bhagirath Public School</h4>
                     <p class="timeline_text">Completed Senior Secondary education with a focus on Commerce and Economics.</p>
-                    <div class="timeline_image-wrapper">
-                        <!-- TODO: Replace placeholder with actual Bhagirath Public School Logo -->
-                        <img src="https://placehold.co/100x100/333333/FFFFFF?text=School" alt="Bhagirath Public School Logo" loading="lazy">
-                    </div>
                 </div>
             </div>
         </div>
@@ -1370,6 +1374,7 @@
     <section id="experience" class="section-timeline">
         <h2 class="section-title">Work Experience</h2>
         <div class="timeline_component">
+            <!-- Re-added timeline progress bar -->
             <div class="timeline_progress">
                 <div class="timeline_progress-bar" id="experience-progress-bar"></div>
             </div>
@@ -1384,10 +1389,6 @@
                     <h3>Senior Executive</h3>
                     <h4>Pacific Global</h4>
                     <p class="timeline_text">Leveraged analytical skills to interpret complex data, identify trends, and provide actionable insights within the healthcare revenue cycle.</p>
-                    <div class="timeline_image-wrapper">
-                        <!-- TODO: Replace placeholder with actual Pacific Global Logo -->
-                        <img src="https://placehold.co/100x100/333333/FFFFFF?text=Pacific" alt="Pacific Global Logo" loading="lazy">
-                    </div>
                 </div>
             </div>
             <div class="timeline_item">
@@ -1401,10 +1402,6 @@
                     <h3>Analyst 2</h3>
                     <h4>R1RCM</h4>
                     <p class="timeline_text">Performed advanced data analysis and predictive modeling for healthcare claims.</p>
-                    <div class="timeline_image-wrapper">
-                        <!-- TODO: Replace placeholder with actual R1RCM Logo -->
-                        <img src="https://placehold.co/100x100/333333/FFFFFF?text=R1" alt="R1RCM Logo" loading="lazy">
-                    </div>
                 </div>
             </div>
             <div class="timeline_item">
@@ -1418,10 +1415,6 @@
                     <h3>Associate</h3>
                     <h4>Tech Mahindra</h4>
                     <p class="timeline_text">Handled data processing, reporting, and analysis tasks to support client decision-making.</p>
-                    <div class="timeline_image-wrapper">
-                        <!-- TODO: Replace placeholder with actual Tech Mahindra Logo -->
-                        <img src="https://placehold.co/100x100/333333/FFFFFF?text=TechM" alt="Tech Mahindra Logo" loading="lazy">
-                    </div>
                 </div>
             </div>
             <div class="timeline_item">
@@ -1435,10 +1428,6 @@
                     <h3>Customer Service Executive</h3>
                     <h4>iEnergizer</h4>
                     <p class="timeline_text">Provided customer support, resolved queries, and maintained high service standards in a fast-paced environment.</p>
-                    <div class="timeline_image-wrapper">
-                        <!-- TODO: Replace placeholder with actual iEnergizer Logo -->
-                        <img src="https://placehold.co/100x100/333333/FFFFFF?text=iEnergizer" alt="iEnergizer Logo" loading="lazy">
-                    </div>
                 </div>
             </div>
         </div>
@@ -1695,19 +1684,35 @@
                 });
             }
 
-            // Fix for timeline progress bar: fills to 100% when component is visible
+            // Re-added function for timeline progress bar: fills to 100% when component is visible
             function animateTimelineProgress() {
                 const timelineComponents = document.querySelectorAll('.timeline_component');
                 timelineComponents.forEach(component => {
                     const progressBar = component.querySelector('.timeline_progress-bar');
-                    const rect = component.getBoundingClientRect();
-                    const viewportHeight = window.innerHeight;
+                    // Check if progressBar exists to avoid errors if it was removed
+                    if (progressBar) {
+                        const rect = component.getBoundingClientRect();
+                        const viewportHeight = window.innerHeight;
 
-                    // If the component is currently visible on screen
-                    if (rect.top < viewportHeight && rect.bottom > 0) {
-                        progressBar.style.height = '100%'; // Fill it completely
-                    } else {
-                        progressBar.style.height = '0%'; // Reset when out of view
+                        // Calculate how much of the component is visible
+                        const visibleHeight = Math.min(rect.bottom, viewportHeight) - Math.max(rect.top, 0);
+                        const componentHeight = rect.height;
+
+                        // Calculate the percentage of visibility
+                        let visibilityPercentage = 0;
+                        if (componentHeight > 0) {
+                            visibilityPercentage = (visibleHeight / componentHeight) * 100;
+                        }
+
+                        // Cap the percentage at 100%
+                        if (visibilityPercentage > 100) {
+                            visibilityPercentage = 100;
+                        } else if (visibilityPercentage < 0) {
+                            visibilityPercentage = 0;
+                        }
+
+                        // Set the height of the progress bar based on visibility
+                        progressBar.style.height = visibilityPercentage + '%';
                     }
                 });
             }
@@ -1727,7 +1732,7 @@
                         const suffix = entry.target.getAttribute('data-suffix') || '';
                         const decimalPlaces = parseInt(entry.target.getAttribute('data-decimal-places')) || 0;
                         let current = 0;
-                        const duration = 1500; // Reduced from 2000ms to 1500ms for faster counting
+                        const duration = 750; // Reduced from 1500ms to 750ms for faster counting
                         const stepTime = 10;
                         const steps = duration / stepTime;
                         const increment = target / steps;
@@ -1751,7 +1756,7 @@
             // Initial calls and event listeners
             window.addEventListener('scroll', () => {
                 animateSkillBars();
-                animateTimelineProgress();
+                animateTimelineProgress(); // Re-added call
             });
             window.addEventListener('load', () => {
                 typeWriter(); // Start typing animation
