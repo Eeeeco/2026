@@ -1,0 +1,26 @@
+<svg xmlns="http://www.w3.org/2000/svg" xml:space="preserve" id="income-report" x="0" y="0" enable-background="new 0 0 64 64" version="1.1" viewBox="0 0 64 64">
+  <polygon fill="#232e42" points="37.17 59.75 16.55 59.75 17.36 57.48 21.08 47.17 32.63 47.17 36.35 57.48"></polygon>
+  <path fill="#29354e" d="M40.59 58.53v2.22c0 .58-.47 1.06-1.06 1.06H14.18c-.58 0-1.06-.47-1.06-1.06v-2.22c0-.58.47-1.05 1.06-1.05h25.36C40.12 57.48 40.59 57.96 40.59 58.53zM51.41 52.2H2.3c-1.27 0-2.3-1.03-2.3-2.3V15.44c0-1.27 1.03-2.3 2.3-2.3h49.11c1.27 0 2.3 1.03 2.3 2.3v34.47C53.71 51.18 52.68 52.2 51.41 52.2z"></path>
+  <rect width="46.44" height="33.09" x="3.64" y="16.13" fill="#43b5d1"></rect>
+  <g>
+    <polygon fill="#56b883" points="54.33 7.21 49.25 7.21 49.68 2.19 53.92 2.19"></polygon>
+    <polygon fill="#56b883" points="49.23 22.91 54.32 22.92 53.89 27.94 49.65 27.94"></polygon>
+    <polygon fill="#56b883" points="43.71 16.78 46.25 21.18 41.69 23.33 39.57 19.65"></polygon>
+    <polygon fill="#56b883" points="57.31 21.2 59.85 16.8 63.99 19.68 61.86 23.35"></polygon>
+    <polygon fill="#56b883" points="46.26 8.93 43.72 13.33 39.58 10.45 41.7 6.78"></polygon>
+    <polygon fill="#56b883" points="59.86 13.35 57.32 8.94 61.88 6.8 64 10.48"></polygon>
+    <circle cx="51.78" cy="15.06" r="9.95" fill="#56b883" transform="rotate(-2.688 51.767 15.03)"></circle>
+    <path fill="#fff" d="M57.53,15.07c0,3.17-2.58,5.75-5.75,5.74c-3.17,0-5.74-2.58-5.74-5.75c0-3.17,2.58-5.74,5.75-5.74
+			C54.97,9.32,57.54,11.9,57.53,15.07z"></path>
+  </g>
+  <g>
+    <rect width="3.8" height="10.56" x="8.61" y="29.79" fill="#ee3e32"></rect>
+    <rect width="3.8" height="14.26" x="17.11" y="26.09" fill="#fe9d30"></rect>
+    <rect width="3.8" height="17.32" x="25.61" y="23.03" fill="#8676b7"></rect>
+    <rect width="10.45" height="1.48" x="34.64" y="27.04" fill="#e8eae7"></rect>
+    <rect width="10.45" height="1.48" x="34.64" y="32.21" fill="#e8eae7"></rect>
+    <rect width="10.45" height="1.48" x="34.64" y="37.39" fill="#e8eae7"></rect>
+    <rect width="10.45" height="1.48" x="34.64" y="42.56" fill="#e8eae7"></rect>
+    <rect width="20.8" height="1.87" x="8.61" y="42.17" fill="#e8eae7"></rect>
+  </g>
+</svg>
