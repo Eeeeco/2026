@@ -22,6 +22,7 @@ I'm a passionate data professional with a strong background in data analysis and
 
 
 ---
+
 ### <img src="./assets/icons/bioinformatics.svg" alt="Skills icon" width="30" height="30"> Skills & Technologies
 * <img src="./assets/icons/data-science.svg" alt="Data Science Icon" width="25" height="25"> **Data Science:** Data analysis, machine learning, and statistical modeling.
 * <img src="./assets/icons/python.svg" alt="Python Icon" width="25" height="25"> **Python:** Proficient in data manipulation with pandas and numpy.
@@ -38,17 +39,22 @@ I'm a passionate data professional with a strong background in data analysis and
 ### 🛠️ My Skills & Technologies
 
 <div align="center">
+
+<div align="center">
   
 | Category | Skills |
 | :---: | :---: |
 | **Languages** | ![Python Badge](https://img.shields.io/badge/Python-3776AB?style=for-the-badge&logo=python&logoColor=white) ![SQL Badge](https://img.shields.io/badge/SQL-4479A1?style=for-the-badge&logo=sqlite&logoColor=white) |
-| **Data Science** | ![Data Science Icon](./assets/icons/data-science.svg) |
-| **Databases** | ![Database Icon](./assets/icons/database.svg) |
-| **Cloud** | ![Cloud Icon](./assets/icons/cloud.svg) |
-| **Visualization** | ![Visualization Icon](./assets/icons/visualization.svg) |
-| **Machine Learning** | ![Machine Learning Icon](./assets/icons/machine-learning.svg) |
+| **Data Science** | ![Data Science Badge](https://img.shields.io/badge/Data%20Science-4A90E2?style=for-the-badge&logo=science&logoColor=white) |
+| **Databases** | ![Databases Badge](https://img.shields.io/badge/Databases-00758F?style=for-the-badge&logo=postgresql&logoColor=white) |
+| **Cloud** | ![Cloud Badge](https://img.shields.io/badge/Cloud-F0801C?style=for-the-badge&logo=amazonaws&logoColor=white) |
+| **Visualization** | ![Visualization Badge](https://img.shields.io/badge/Visualization-3B5998?style=for-the-badge&logo=tableau&logoColor=white) |
+| **Machine Learning** | ![Machine Learning Badge](https://img.shields.io/badge/Machine%20Learning-FF6F00?style=for-the-badge&logo=tensorflow&logoColor=white) |
 | **Tools** | ![Git Badge](https://img.shields.io/badge/Git-F05032?style=for-the-badge&logo=git&logoColor=white) ![Jupyter Badge](https://img.shields.io/badge/Jupyter-F37626?style=for-the-badge&logo=jupyter&logoColor=white) ![VSCode Badge](https://img.shields.io/badge/VS%20Code-007ACC?style=for-the-badge&logo=visual%20studio%20code&logoColor=white) |
 
+</div>
+
+---
 </div>
 
 ---
@@ -70,6 +76,8 @@ I'm a passionate data professional with a strong background in data analysis and
 <p align="center">
   <img src="https://github-readme-stats.vercel.app/api/top-langs/?username=lightwordz&layout=compact&theme=dark" alt="Top Languages">
 </p>
+
+---
 
 ### ✨ Acknowledgements
 
